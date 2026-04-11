@@ -1,0 +1,14 @@
+---
+interface Props {
+  id?: string;
+  textCenter?: boolean;
+}
+
+const { id, textCenter = false } = Astro.props;
+---
+
+<div class="navy-section" id={id} style={textCenter ? 'text-align:center' : undefined}>
+  <div class="container">
+    <slot />
+  </div>
+</div>

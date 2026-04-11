@@ -1,0 +1,672 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Divider from '../components/Divider.astro';
+---
+
+<BaseLayout title="Try It — WinLoss.AI" description="Analyze a sales call transcript for value levers, controllable behaviors, and objection handling. See what your calls reveal.">
+
+<Nav
+  links={[{label:"Home", href:"/"}]}
+  ctaLabel="Get Your Diagnostic"
+  ctaHref="/#contact"
+/>
+
+<!-- Hero -->
+<div class="container">
+  <div class="hero">
+    <div class="hero-label">Try It Yourself</div>
+    <h1>See what your sales calls&nbsp;reveal</h1>
+    <p class="subtitle">Paste a transcript below. Our system will analyze it for value levers, controllable behaviors, and objection handling — and show you what your team is missing.</p>
+  </div>
+</div>
+
+<Divider />
+
+<!-- Analysis Setup -->
+<div class="container">
+  <div class="analysis-setup" id="setup">
+
+    <!-- Step 1: Choose analyses -->
+    <div class="setup-section">
+      <div class="setup-label">Step 1 — Choose Your Analysis</div>
+      <p style="font-size:0.9rem;color:var(--text-dim);margin-bottom:16px">Select one or more. Each analysis looks at your call from a different angle.</p>
+
+      <div class="analysis-types">
+        <div class="analysis-card selected" data-type="value-levers" onclick="toggleAnalysis(this)">
+          <div class="check">&#10003;</div>
+          <h3>Value Levers</h3>
+          <p>Find moments where the buyer revealed what they'd pay for — and whether your rep turned it into a business case or pitched a feature.</p>
+        </div>
+        <div class="analysis-card selected" data-type="controllables" onclick="toggleAnalysis(this)">
+          <div class="check">&#10003;</div>
+          <h3>Control the Controllables</h3>
+          <p>Identify every factor within your rep's control that impacted the deal. Separate coaching opportunities from bad luck.</p>
+        </div>
+        <div class="analysis-card selected" data-type="objections" onclick="toggleAnalysis(this)">
+          <div class="check">&#10003;</div>
+          <h3>Objection Handling</h3>
+          <p>Find every objection, hesitation, and concern the buyer expressed — and how your rep responded. Addressed, deflected, or missed entirely.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Transcript -->
+    <div class="setup-section">
+      <div class="setup-label">Step 2 — Provide a Transcript</div>
+
+      <div class="transcript-tabs">
+        <div class="transcript-tab active" onclick="switchTab(this, 'paste')">Paste Your Own</div>
+        <div class="transcript-tab" onclick="switchTab(this, 'sample')">Use a Sample</div>
+      </div>
+
+      <div id="tab-paste">
+        <textarea class="transcript-input" id="transcript-input" placeholder="Paste a sales call transcript here...
+
+The more complete the transcript, the better the analysis. Include both sides of the conversation — rep and buyer."></textarea>
+        <div class="char-count"><span id="char-count">0</span> characters</div>
+      </div>
+
+      <div id="tab-sample" style="display:none">
+        <div style="padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:0 10px 10px 10px">
+          <div class="sample-selector">
+            <select id="sample-select" onchange="loadSample(this.value)">
+              <option value="">Select a sample transcript...</option>
+              <option value="enterprise-saas">Enterprise SaaS — Integration Platform Demo</option>
+              <option value="medical-insurance">Medical Insurance — Disability Coverage Consultation</option>
+              <option value="smb-software">SMB Software — Workflow Automation Discovery</option>
+            </select>
+          </div>
+          <div id="sample-preview" style="font-size:0.85rem;color:var(--text-dim);max-height:200px;overflow-y:auto;padding:12px;background:var(--surface-recessed);border-radius:6px;display:none">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analyze button -->
+    <button class="analyze-btn" id="analyze-btn" onclick="startAnalysis()">
+      Analyze This Call
+    </button>
+    <p style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center;margin-top:8px">
+      Your transcript is processed securely and not stored.
+    </p>
+  </div>
+</div>
+
+<!-- Progress -->
+<div class="container">
+  <div class="progress-section" id="progress">
+    <div class="progress-card">
+      <div class="progress-title">Analyzing your call</div>
+
+      <div class="progress-steps">
+        <div class="progress-step" id="step-ingest">
+          <div class="step-icon">1</div>
+          <div class="step-label">Reading transcript</div>
+        </div>
+        <div class="progress-step" id="step-value-levers">
+          <div class="step-icon">2</div>
+          <div class="step-label">Analyzing value levers</div>
+        </div>
+        <div class="progress-step" id="step-controllables">
+          <div class="step-icon">3</div>
+          <div class="step-label">Analyzing controllable factors</div>
+        </div>
+        <div class="progress-step" id="step-objections">
+          <div class="step-icon">4</div>
+          <div class="step-label">Analyzing objection handling</div>
+        </div>
+        <div class="progress-step" id="step-insights">
+          <div class="step-icon">5</div>
+          <div class="step-label">Preparing insights</div>
+        </div>
+      </div>
+
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="progress-status" id="progress-status">Starting analysis...</div>
+    </div>
+  </div>
+</div>
+
+<!-- Results -->
+<div class="container">
+  <div class="results-section" id="results">
+
+    <div class="results-header">
+      <h2>Your Call Analysis</h2>
+      <p>Here's what we found in your sales conversation.</p>
+    </div>
+
+    <!-- Result tabs -->
+    <div class="result-tabs">
+      <div class="result-tab active" onclick="switchResultTab(this, 'panel-summary')">Summary</div>
+      <div class="result-tab" onclick="switchResultTab(this, 'panel-value-levers')">Value Levers</div>
+      <div class="result-tab" onclick="switchResultTab(this, 'panel-controllables')">Controllables</div>
+      <div class="result-tab" onclick="switchResultTab(this, 'panel-objections')">Objections</div>
+    </div>
+
+    <!-- Summary panel -->
+    <div class="result-panel active" id="panel-summary">
+      <div class="summary-card">
+        <div class="summary-stats" id="summary-stats">
+          <!-- Populated by JS -->
+        </div>
+        <div id="summary-text" style="font-size:0.92rem;line-height:1.7">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div id="coaching-takeaway">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Value Levers panel -->
+    <div class="result-panel" id="panel-value-levers">
+      <div id="value-levers-findings">
+        <!-- Populated by JS — sample structure below shows the design -->
+      </div>
+    </div>
+
+    <!-- Controllables panel -->
+    <div class="result-panel" id="panel-controllables">
+      <div id="controllables-findings">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Objections panel -->
+    <div class="result-panel" id="panel-objections">
+      <div id="objections-findings">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="results-cta">
+      <h3>This was one call.</h3>
+      <p>Imagine this across every call in your system — patterns, trends, and the specific behaviors that separate wins from losses.</p>
+      <a href="/#contact">Get Your Full Diagnostic</a>
+      <p style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-top:12px">$9,600 &middot; 96 hours &middot; Every call analyzed</p>
+    </div>
+
+  </div>
+</div>
+
+<Footer />
+
+</BaseLayout>
+
+<style is:global>
+/* Hero overrides for try page */
+.hero {
+  padding: 60px 0 40px;
+}
+.hero h1 {
+  font-size: 2.6rem;
+}
+.hero .subtitle {
+  font-size: 1.05rem;
+  max-width: 540px;
+}
+
+/* Analysis setup */
+.analysis-setup {
+  padding: 48px 0;
+}
+.setup-section {
+  margin-bottom: 32px;
+}
+
+/* Analysis type cards */
+.analysis-types {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+}
+@media (max-width: 700px) { .analysis-types { grid-template-columns: 1fr; } }
+.analysis-card {
+  background: var(--surface); border: 2px solid var(--border);
+  border-radius: 10px; padding: 20px; cursor: pointer;
+  transition: all 0.2s; position: relative;
+}
+.analysis-card:hover { border-color: var(--accent-light); }
+.analysis-card.selected { border-color: var(--accent); background: var(--accent-dim); }
+.analysis-card .check {
+  position: absolute; top: 12px; right: 12px;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 2px solid var(--border-bright);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: transparent; transition: all 0.2s;
+}
+.analysis-card.selected .check {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+}
+.analysis-card h3 {
+  font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; padding-right: 30px;
+}
+.analysis-card p {
+  font-size: 0.82rem; color: var(--text-dim); line-height: 1.5;
+}
+
+/* Transcript input */
+.transcript-area {
+  position: relative;
+}
+.transcript-tabs {
+  display: flex; gap: 0; margin-bottom: -1px; position: relative; z-index: 1;
+}
+.transcript-tab {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  padding: 10px 20px; background: var(--surface-recessed); border: 1px solid var(--border);
+  border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer;
+  color: var(--text-dim); transition: all 0.2s;
+}
+.transcript-tab.active {
+  background: var(--surface); color: var(--text); border-bottom: 1px solid var(--surface);
+}
+.transcript-input {
+  width: 100%; min-height: 200px; max-height: 400px; padding: 20px;
+  font-family: var(--font-body); font-size: 0.9rem; line-height: 1.6;
+  border: 1px solid var(--border); border-radius: 0 10px 10px 10px;
+  background: var(--surface); color: var(--text); resize: vertical;
+}
+.transcript-input:focus { outline: none; border-color: var(--accent); }
+.transcript-input::placeholder { color: var(--text-muted); }
+.char-count {
+  font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
+  text-align: right; margin-top: 6px;
+}
+
+/* Sample transcript selector */
+.sample-selector {
+  margin-bottom: 16px;
+}
+.sample-selector select {
+  font-family: var(--font-body); font-size: 0.88rem;
+  padding: 8px 12px; border: 1px solid var(--border-bright);
+  border-radius: 6px; background: var(--surface); color: var(--text);
+  width: 100%;
+}
+
+/* Progress */
+.progress-section {
+  padding: 48px 0;
+}
+.progress-steps {
+  max-width: 400px; margin: 0 auto; text-align: left;
+}
+.progress-step {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.progress-step:last-child { border-bottom: none; }
+.progress-step .step-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; flex-shrink: 0;
+  background: var(--surface-recessed); color: var(--text-muted);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.progress-step.active .step-icon {
+  background: var(--accent-dim); color: var(--accent);
+  border-color: var(--accent);
+  animation: pulse 2s ease infinite;
+}
+.progress-step.complete .step-icon {
+  background: var(--emerald); color: #fff;
+  border-color: var(--emerald);
+}
+.progress-step .step-label {
+  font-size: 0.9rem; color: var(--text-muted);
+  transition: color 0.3s;
+}
+.progress-step.active .step-label { color: var(--text); font-weight: 500; }
+.progress-step.complete .step-label { color: var(--text-dim); }
+
+/* Results */
+.results-section {
+  display: none;
+  padding: 48px 0 80px;
+}
+.results-section.active { display: block; }
+
+.results-header {
+  text-align: center; margin-bottom: 40px;
+}
+.results-header h2 {
+  font-family: var(--font-display); font-size: 2rem; margin-bottom: 8px;
+}
+.results-header p {
+  font-size: 0.95rem; color: var(--text-dim);
+}
+
+/* Result tabs */
+.result-tabs {
+  display: flex; gap: 0; border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.result-tab {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  padding: 12px 20px; cursor: pointer; color: var(--text-muted);
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+}
+.result-tab:hover { color: var(--text-dim); }
+.result-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Result panels */
+.result-panel { display: none; }
+.result-panel.active { display: block; }
+
+/* Summary stats */
+.summary-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px; margin-bottom: 16px;
+}
+.summary-stat {
+  text-align: center; padding: 12px;
+  background: var(--accent-dim); border-radius: 8px;
+}
+.summary-stat .num {
+  font-family: var(--font-display); font-size: 1.8rem; color: var(--accent);
+  line-height: 1;
+}
+.summary-stat .label {
+  font-family: var(--font-mono); font-size: 9px; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--text-muted); margin-top: 4px;
+}
+
+/* Urgency message */
+.urgency-card {
+  background: var(--surface); border-left: 4px solid var(--rose);
+  border-radius: 0 10px 10px 0; padding: 20px 24px;
+  margin-top: 16px;
+}
+.urgency-label {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px; color: var(--rose);
+  margin-bottom: 8px;
+}
+.urgency-card p {
+  font-size: 0.9rem; line-height: 1.6; color: var(--text-dim);
+}
+</style>
+
+<script is:inline>
+// Analysis card toggle
+function toggleAnalysis(card) {
+  card.classList.toggle('selected');
+  updateAnalyzeButton();
+}
+
+function updateAnalyzeButton() {
+  const selected = document.querySelectorAll('.analysis-card.selected');
+  const btn = document.getElementById('analyze-btn');
+  const count = selected.length;
+  btn.disabled = count === 0;
+  btn.textContent = count === 0 ? 'Select at least one analysis' :
+    `Analyze This Call (${count} ${count === 1 ? 'analysis' : 'analyses'})`;
+}
+
+// Tab switching
+function switchTab(tab, type) {
+  document.querySelectorAll('.transcript-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById('tab-paste').style.display = type === 'paste' ? 'block' : 'none';
+  document.getElementById('tab-sample').style.display = type === 'sample' ? 'block' : 'none';
+}
+
+// Character count
+document.getElementById('transcript-input').addEventListener('input', function() {
+  document.getElementById('char-count').textContent = this.value.length.toLocaleString();
+});
+
+// Sample loading (placeholder — replace with real samples)
+function loadSample(value) {
+  const preview = document.getElementById('sample-preview');
+  if (!value) { preview.style.display = 'none'; return; }
+  preview.style.display = 'block';
+  preview.textContent = 'Loading sample transcript...';
+  // TODO: Load actual sample transcripts
+  setTimeout(() => {
+    preview.textContent = `[Sample transcript: ${value}]\n\nThis will be replaced with a real sample transcript when the backend is connected.`;
+  }, 300);
+}
+
+// Start analysis
+function startAnalysis() {
+  const setup = document.getElementById('setup');
+  const progress = document.getElementById('progress');
+  const results = document.getElementById('results');
+
+  // Hide setup, show progress
+  setup.style.display = 'none';
+  progress.classList.add('active');
+  results.classList.remove('active');
+
+  // Get selected analyses
+  const selected = Array.from(document.querySelectorAll('.analysis-card.selected'))
+    .map(c => c.dataset.type);
+
+  // Build step sequence
+  const steps = ['step-ingest'];
+  if (selected.includes('value-levers')) steps.push('step-value-levers');
+  if (selected.includes('controllables')) steps.push('step-controllables');
+  if (selected.includes('objections')) steps.push('step-objections');
+  steps.push('step-insights');
+
+  // Show/hide relevant progress steps
+  document.getElementById('step-value-levers').style.display =
+    selected.includes('value-levers') ? 'flex' : 'none';
+  document.getElementById('step-controllables').style.display =
+    selected.includes('controllables') ? 'flex' : 'none';
+  document.getElementById('step-objections').style.display =
+    selected.includes('objections') ? 'flex' : 'none';
+
+  // Animate progress (demo — replace with real API polling)
+  const statusMessages = {
+    'step-ingest': 'Reading and parsing transcript...',
+    'step-value-levers': 'Identifying CFO-grade value levers...',
+    'step-controllables': 'Evaluating controllable factors...',
+    'step-objections': 'Mapping objection handling patterns...',
+    'step-insights': 'Synthesizing findings and generating recommendations...'
+  };
+
+  let currentStep = 0;
+  function advanceStep() {
+    if (currentStep > 0) {
+      document.getElementById(steps[currentStep - 1]).classList.remove('active');
+      document.getElementById(steps[currentStep - 1]).classList.add('complete');
+    }
+
+    if (currentStep < steps.length) {
+      document.getElementById(steps[currentStep]).classList.add('active');
+      document.getElementById('progress-status').textContent = statusMessages[steps[currentStep]];
+      document.getElementById('progress-bar').style.width =
+        ((currentStep + 1) / steps.length * 100) + '%';
+      currentStep++;
+      setTimeout(advanceStep, 1500 + Math.random() * 1000);
+    } else {
+      // Analysis complete — show results
+      setTimeout(showResults, 500);
+    }
+  }
+  advanceStep();
+
+  // TODO: Replace demo animation with real API call:
+  // const transcript = document.getElementById('transcript-input').value;
+  // fetch('/api/analyze', { method: 'POST', body: JSON.stringify({ transcript, analyses: selected }) })
+  //   .then(res => res.json())
+  //   .then(data => renderResults(data));
+}
+
+// Show results (demo)
+function showResults() {
+  const progress = document.getElementById('progress');
+  const results = document.getElementById('results');
+  progress.classList.remove('active');
+  results.classList.add('active');
+
+  // Populate with demo results
+  document.getElementById('summary-stats').innerHTML = `
+    <div class="summary-stat"><div class="num">7</div><div class="label">Value Levers</div></div>
+    <div class="summary-stat"><div class="num">4</div><div class="label">Missed</div></div>
+    <div class="summary-stat"><div class="num">5</div><div class="label">Controllable Factors</div></div>
+    <div class="summary-stat"><div class="num">3</div><div class="label">Objections</div></div>
+  `;
+  document.getElementById('summary-text').innerHTML = `
+    <p>This call surfaced 7 moments where the buyer revealed quantifiable business impact. Your rep addressed 3 and missed 4 — including the highest-value lever on the call (engineering time spent on integration). The rep's discovery was strong but the follow-through defaulted to feature pitching instead of building a business case.</p>
+    <p>The buyer expressed 3 objections. Two were addressed directly, one (timeline concern) was acknowledged but not resolved — and it's likely the reason the deal will stall.</p>
+  `;
+  document.getElementById('coaching-takeaway').innerHTML = `
+    <div style="background:var(--accent-dim);border:2px solid var(--accent);border-radius:12px;padding:24px;margin-top:20px;position:relative">
+      <div style="position:absolute;top:-10px;left:20px;background:var(--accent);color:#fff;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:1.5px;padding:2px 12px;border-radius:4px">COACHING TAKEAWAY</div>
+      <p style="font-size:0.92rem;line-height:1.7;margin:0">If you could change one thing on this rep's next call: <strong>when the buyer mentions a pain, don't pitch the solution yet.</strong> Ask one more question — "how much is that costing you?" or "how many people does that affect?" — before positioning the product. This single habit would have converted 3 of the 4 missed value levers into business cases.</p>
+    </div>
+  `;
+
+  // Demo value levers findings
+  document.getElementById('value-levers-findings').innerHTML = `
+    <div class="finding">
+      <div class="finding-header">
+        <div class="finding-title">Integration maintenance pulling engineers off feature work</div>
+        <div class="finding-badge negative">Missed</div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-quote">
+          <span class="speaker">Buyer:</span>
+          "We have a few engineers who spend probably a third of their time just keeping our integrations from breaking. It's a constant thing."
+        </div>
+        <div class="finding-analysis">
+          <p>The buyer quantified the problem unprompted — "a few engineers" and "a third of their time." This is a CFO-grade lever hiding in plain sight: 2-3 engineers × 33% time × $150K loaded cost = $100-150K/year in integration maintenance. The rep responded with "yeah, that's really common" and moved to a feature demo.</p>
+        </div>
+        <div class="finding-action">
+          <div class="finding-action-label">What to do instead</div>
+          <p>Ask: "When you say a few engineers — is that 2? 3? And is integration their primary job, or does it pull them off building features your customers are waiting for?" Then quantify: "So you're looking at roughly $150K/year in engineering time on maintenance. What would it mean if you got that back?"</p>
+        </div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-header">
+        <div class="finding-title">Buyer connected product to revenue timeline</div>
+        <div class="finding-badge positive">Captured</div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-quote">
+          <span class="speaker">Buyer:</span>
+          "If we could get models deployed faster, we'd probably hit our Q3 revenue targets. Right now we're always a sprint behind."
+        </div>
+        <div class="finding-analysis">
+          <p>The buyer directly tied deployment speed to revenue — a strong CFO-grade lever. The rep picked up on this and asked good follow-up questions about the revenue impact of delayed deployments.</p>
+        </div>
+        <div class="finding-action">
+          <div class="finding-action-label">Follow-up urgency message</div>
+          <p>"You mentioned being a sprint behind on Q3 targets because of deployment speed. Every sprint that slips is revenue your competitors are capturing. If deployment time dropped by 50%, what would that mean for Q3?"</p>
+        </div>
+      </div>
+    </div>
+    <div class="urgency-card">
+      <div class="urgency-label">Draft Follow-Up Email</div>
+      <p>Hi [Name],</p>
+      <p>Thanks for the conversation today. Two things stood out to me:</p>
+      <p>1. Your team has 2-3 engineers spending ~30% of their time on integration maintenance. At loaded cost, that's roughly $100-150K/year that could be going toward feature development.</p>
+      <p>2. Deployment delays are putting Q3 revenue targets at risk — every sprint you're behind is revenue your competitors are capturing.</p>
+      <p>These aren't future problems. They're costs leaving your account this quarter. Happy to walk through how we'd address both — would Thursday work for a 20-minute follow-up?</p>
+    </div>
+  `;
+
+  // Demo controllables findings
+  document.getElementById('controllables-findings').innerHTML = `
+    <div class="finding">
+      <div class="finding-header">
+        <div class="finding-title">Strong discovery, weak follow-through</div>
+        <div class="finding-badge negative">Hurt the deal</div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-quote">
+          <span class="speaker">Rep (minute 4):</span>
+          "Tell me about your current workflow — what's the biggest headache?"
+        </div>
+        <div class="finding-analysis">
+          <p>Good open-ended discovery question. The buyer gave a detailed answer about integration pain. But the rep's response was a feature pitch ("we handle all of that seamlessly") instead of a quantifying follow-up. The discovery was wasted.</p>
+        </div>
+        <div class="finding-action">
+          <div class="finding-action-label">Coaching note</div>
+          <p>The rep has the instinct to ask good questions. The habit to break is the reflex to pitch immediately after hearing pain. Train the "one more question" discipline: hear the pain → ask what it costs → THEN position the solution.</p>
+        </div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-header">
+        <div class="finding-title">Clear next step established</div>
+        <div class="finding-badge positive">Helped the deal</div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-quote">
+          <span class="speaker">Rep (minute 28):</span>
+          "Based on what you've shared, I think the next step is a technical deep-dive with your engineering lead. Can we get that on the calendar for this week?"
+        </div>
+        <div class="finding-analysis">
+          <p>Specific, time-bound, involves the right next stakeholder. This is a controllable factor that helped the deal — clear momentum instead of "I'll send you some info."</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Demo objections findings
+  document.getElementById('objections-findings').innerHTML = `
+    <div class="finding">
+      <div class="finding-header">
+        <div class="finding-title">Timeline concern — unresolved</div>
+        <div class="finding-badge negative">Deflected</div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-quote">
+          <span class="speaker">Buyer (minute 18):</span>
+          "I'm just not sure we can get this through our security review before Q3. That process alone takes 6-8 weeks."
+        </div>
+        <div class="finding-analysis">
+          <p>This is a process objection, not a product objection — but it's a deal killer if unaddressed. The rep said "we can definitely work with your timeline" without addressing the specific 6-8 week security review bottleneck. The buyer's concern was concrete and the response was vague.</p>
+        </div>
+        <div class="finding-action">
+          <div class="finding-action-label">What to do instead</div>
+          <p>Address the specific blocker: "The 6-8 week security review — is that for every new vendor, or is there a fast-track for tools that meet certain compliance standards? We have SOC 2 Type II and can usually pre-populate 80% of a security questionnaire. Would it help if I sent that to your security team this week so you know the timeline before our next call?"</p>
+        </div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-header">
+        <div class="finding-title">Pricing concern — addressed well</div>
+        <div class="finding-badge positive">Addressed</div>
+      </div>
+      <div class="finding-body">
+        <div class="finding-quote">
+          <span class="speaker">Buyer (minute 22):</span>
+          "This is more than we budgeted. We were thinking more in the $3-4K range."
+        </div>
+        <div class="finding-analysis">
+          <p>The rep handled this well — connected the price back to the integration cost the buyer had mentioned earlier: "You told me your team spends $150K/year on integration maintenance. If we cut that in half, the ROI pays for itself in the first month." Good use of the buyer's own numbers.</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Scroll to results
+  results.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Result tab switching
+function switchResultTab(tab, panelId) {
+  document.querySelectorAll('.result-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.result-panel').forEach(p => p.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+
+// Init
+updateAnalyzeButton();
+</script>

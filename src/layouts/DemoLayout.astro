@@ -1,0 +1,116 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import NavySection from '../components/NavySection.astro';
+
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+interface FooterLink {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  heroLabel: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  navLogoText?: string;
+  navLinks?: NavLink[];
+  navCtaLabel?: string;
+  navCtaHref?: string;
+  footerLinks?: FooterLink[];
+  ctaHeadline?: string;
+  ctaSubtext?: string;
+  ctaButtonLabel?: string;
+  ctaButtonHref?: string;
+  ctaTagline?: string;
+}
+
+const {
+  title,
+  description,
+  heroLabel,
+  heroTitle,
+  heroSubtitle,
+  navLogoText = 'Ponder',
+  navLinks = [],
+  navCtaLabel = 'Book a Call',
+  navCtaHref = '#book',
+  footerLinks = [
+    { label: 'Home', href: '/' },
+  ],
+  ctaHeadline = 'This was one call.',
+  ctaSubtext = 'Imagine this across every call in your system \u2014 patterns, trends, and the specific behaviors that separate wins from losses.',
+  ctaButtonLabel = 'Get Your Full Diagnostic',
+  ctaButtonHref = '/#contact',
+  ctaTagline = '$9,600 \u00B7 96 hours \u00B7 Every call analyzed',
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav
+    logoText={navLogoText}
+    links={navLinks}
+    ctaLabel={navCtaLabel}
+    ctaHref={navCtaHref}
+  />
+
+  <!-- Hero -->
+  <div class="container">
+    <div class="hero demo-hero">
+      <div class="hero-label">{heroLabel}</div>
+      <h1 set:html={heroTitle} />
+      <p class="subtitle">{heroSubtitle}</p>
+      <slot name="hero-ctas" />
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <slot />
+
+  <!-- CTA Block -->
+  <NavySection id="book" textCenter>
+    <h2>{ctaHeadline}</h2>
+    <p style="font-size:1.05rem;color:var(--navy-text-dim);max-width:500px;margin:0 auto 32px;line-height:1.65">{ctaSubtext}</p>
+    <a href={ctaButtonHref} class="demo-cta-btn">{ctaButtonLabel}</a>
+    <p style="font-family:var(--font-mono);font-size:11px;color:var(--navy-text-dim);margin-top:12px">{ctaTagline}</p>
+  </NavySection>
+
+  <Footer links={footerLinks} />
+</BaseLayout>
+
+<style>
+.demo-hero {
+  padding: 80px 0 60px;
+}
+.demo-hero h1 {
+  font-size: 3.2rem;
+}
+.demo-hero .subtitle {
+  font-size: 1.15rem;
+  max-width: 600px;
+}
+.demo-cta-btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: #fff;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.demo-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+}
+</style>

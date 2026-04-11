@@ -1,0 +1,34 @@
+---
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  logoText?: string;
+  logoHref?: string;
+  links?: NavLink[];
+  ctaLabel: string;
+  ctaHref: string;
+}
+
+const {
+  logoText = 'WinLoss.AI',
+  logoHref = '/',
+  links = [],
+  ctaLabel,
+  ctaHref
+} = Astro.props;
+---
+
+<div class="container-wide">
+  <nav>
+    <a href={logoHref} class="logo">{logoText}</a>
+    <div class="nav-links">
+      {links.map(link => (
+        <a href={link.href} class="nav-link">{link.label}</a>
+      ))}
+      <a href={ctaHref} class="nav-cta">{ctaLabel}</a>
+    </div>
+  </nav>
+</div>

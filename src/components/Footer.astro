@@ -1,0 +1,30 @@
+---
+interface FooterLink {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+interface Props {
+  links?: FooterLink[];
+}
+
+const { links = [
+  { label: 'info@letsponder.it', href: 'mailto:info@letsponder.it' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/ericmwhite', external: true }
+] } = Astro.props;
+---
+
+<div class="container-wide">
+  <footer>
+    <div style="display:flex;align-items:center;gap:16px">
+      <img src="/assets/Ponder-V2-Small.png" alt="Ponder" style="height:28px">
+      <span>&copy; 2026 WinLoss.AI &middot; A Ponder product</span>
+    </div>
+    <div style="display:flex;gap:16px">
+      {links.map(link => (
+        <a href={link.href} target={link.external ? '_blank' : undefined}>{link.label}</a>
+      ))}
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,1554 @@
+---
+import DemoLayout from '../layouts/DemoLayout.astro';
+import Divider from '../components/Divider.astro';
+---
+
+<DemoLayout
+  title="Value Lever Demo — Ponder"
+  description="Find the moments your prospect's CFO would pay for. Analyze sales call transcripts for CFO-grade value levers — problems a CFO could put a dollar amount on."
+  heroLabel="Value Lever Analysis"
+  heroTitle="Find the moments your prospect's CFO would&nbsp;pay&nbsp;for."
+  heroSubtitle="Every sales call has hidden value levers — moments where customers reveal problems a CFO could put a dollar amount on. Most reps hear them and move on."
+  navLinks={[
+    { label: "Why It Matters", href: "#what-to-do" },
+    { label: "The CFO Test", href: "#cfo-test" },
+    { label: "Examples", href: "#almost" },
+    { label: "Try It", href: "#demo" },
+  ]}
+  footerLinks={[
+    { label: "Home", href: "/" },
+    { label: "The CFO Test", href: "#cfo-test" },
+    { label: "Try It", href: "#demo" },
+  ]}
+>
+
+<div class="hero-ctas" slot="hero-ctas">
+  <a href="#demo" class="hero-cta">Try the Demo</a>
+  <a href="#what-to-do" class="hero-cta hero-cta--ghost">What's a Value Lever?</a>
+</div>
+
+<!-- What Sales Can Do -->
+<div class="container">
+  <div class="section" id="what-to-do">
+    <div class="section-label">Why It Matters</div>
+    <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:400;line-height:1.2;margin-bottom:8px">What you do with a value lever</h2>
+    <p style="font-size:1.05rem;color:var(--text-dim);line-height:1.7;max-width:640px;margin-bottom:32px">A value lever isn't just an insight. It's a tool. Here's what changes when your reps start finding them.</p>
+
+    <div class="use-cases-grid">
+      <div class="use-case-card">
+        <div class="use-case-num">1</div>
+        <h4>Build the business case for the buyer</h4>
+        <p>Give them the ROI math they need to justify the purchase internally. "Here's what this is costing you. Here's what it costs to fix. Here's the payback period."</p>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-num">2</div>
+        <h4>Create urgency</h4>
+        <p>Quantify the cost of delay. "Every month you wait is another $5K walking out the door." Turns "we'll decide next quarter" into "we need to move on this."</p>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-num">3</div>
+        <h4>Negotiate from value, not price</h4>
+        <p>When the buyer pushes on price, anchor to the lever. "You're spending $50K/year on a problem this solves. The investment is $15K." Price objection disappears.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-num">4</div>
+        <h4>Arm your champion</h4>
+        <p>Give the internal buyer the exact language and numbers to sell it up the chain. They're not pitching features to the CFO &mdash; they're showing a balance sheet impact.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-num">5</div>
+        <h4>Differentiate from competitors</h4>
+        <p>Low-cost competitors sell features. You sell quantified business impact. The CFO doesn't compare feature lists &mdash; they compare ROI.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-num">6</div>
+        <h4>Expand deal size</h4>
+        <p>Once you find one lever, probe for more. Three levers compound the business case and justify a bigger investment. "We can solve the first problem for $X. But you also mentioned two more &mdash; here's what the full scope looks like."</p>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-num">7</div>
+        <h4>Shorten the sales cycle</h4>
+        <p>Deals stall when the buyer can't justify it. A quantified lever removes the blocker. The buyer doesn't need another meeting &mdash; they have the number.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-num">8</div>
+        <h4>Re-engage stalled deals</h4>
+        <p>Go back to a deal that went dark with a new urgency message. "When we spoke in March, you mentioned $30K in duplicate payments. That was three months ago &mdash; that's potentially another $15K gone."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<Divider />
+
+<!-- The CFO Test -->
+<div class="navy-section" id="cfo-test">
+  <div class="container">
+    <div class="section-label">The Standard</div>
+    <h2>The CFO Test</h2>
+
+    <div class="cfo-test-card">
+      <div class="question">"Could a CFO assign a dollar amount or measurable business impact to this? Will it show up on the balance sheet?"</div>
+      <div class="caveat">If you're paraphrasing, interpreting, or inferring &mdash; it doesn't qualify.</div>
+    </div>
+
+    <div class="cfo-columns">
+      <div>
+        <h3 style="font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:16px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:1.5px;font-size:11px">Value Lever Categories</h3>
+        <ul class="category-list">
+          <li class="category-item">
+            <h4>Cash Flow Impact</h4>
+            <p>Duplicate payments, missed discounts, late penalties, working capital tied up in broken payment timing.</p>
+          </li>
+          <li class="category-item">
+            <h4>Direct Cost Reduction</h4>
+            <p>Manual processing hours, error correction costs, audit prep overhead, external fees from process failures.</p>
+          </li>
+          <li class="category-item">
+            <h4>Risk Mitigation</h4>
+            <p>Fraud exposure, compliance violations, audit remediation, supplier relationship damage from delays.</p>
+          </li>
+          <li class="category-item">
+            <h4>Scalability</h4>
+            <p>Growing volume without growing headcount. Handling spikes without system changes or breakdowns.</p>
+          </li>
+          <li class="category-item">
+            <h4>Decision-Making Enhancement</h4>
+            <p>Real-time budget visibility, contract compliance tracking, negotiation leverage from analytics.</p>
+          </li>
+          <li class="category-item">
+            <h4>Organizational Capabilities</h4>
+            <p>Redeploying people to higher-value work, standardizing across locations, faster operational cycles.</p>
+          </li>
+          <li class="category-item">
+            <h4>Growth Enablement</h4>
+            <p>New market entry, acquisition integration, new buyer segments, new partnership sales motions.</p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:0.9rem;font-weight:600;color:#fff;margin-bottom:16px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:1.5px;font-size:11px">Evidence Strength</h3>
+        <div class="strength-card">
+          <h4 class="quantified">Quantified</h4>
+          <div class="desc">The customer gave you numbers &mdash; FTE counts, volumes, costs, time periods, percentages. Even rough estimates count.</div>
+          <blockquote>"4 people spend 60% of their time on this."</blockquote>
+        </div>
+        <div class="strength-card">
+          <h4 class="unquantified">Unquantified</h4>
+          <div class="desc">Clear business problem, but zero numbers attached. Still qualifies &mdash; but needs one more question to become CFO-grade.</div>
+          <blockquote>"My team spends way too much time on this."</blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- "Almost" Value Levers -->
+<div class="container">
+  <div class="section" id="almost">
+    <div class="section-label">The Gap</div>
+    <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:400;line-height:1.2;margin-bottom:8px">"Almost" Value Levers</h2>
+    <p style="font-size:1.05rem;color:var(--text-dim);line-height:1.7;max-width:640px;margin-bottom:32px">Prospects drop hints constantly. The difference is knowing which questions upgrade a complaint into a business case.</p>
+
+    <div class="almost-grid">
+      <div class="almost-card">
+        <div class="almost-quote">"The current process is frustrating."</div>
+        <div>
+          <div class="almost-problem-label">Problem</div>
+          <div class="almost-problem">Emotion without business impact</div>
+        </div>
+        <div>
+          <div class="almost-fix-label">Ask instead</div>
+          <div class="almost-fix">"What is this costing you today &mdash; in people, time, or dollars?"</div>
+        </div>
+      </div>
+      <div class="almost-card">
+        <div class="almost-quote">"It would be nice to have better reporting."</div>
+        <div>
+          <div class="almost-problem-label">Problem</div>
+          <div class="almost-problem">Feature wish without financial driver</div>
+        </div>
+        <div>
+          <div class="almost-fix-label">Ask instead</div>
+          <div class="almost-fix">"What decisions can't you make today because you don't have that visibility?"</div>
+        </div>
+      </div>
+      <div class="almost-card">
+        <div class="almost-quote">"We waste time on this."</div>
+        <div>
+          <div class="almost-problem-label">Problem</div>
+          <div class="almost-problem">Vague without quantification</div>
+        </div>
+        <div>
+          <div class="almost-fix-label">Ask instead</div>
+          <div class="almost-fix">"How many people are spending time on this, and roughly how many hours a week?"</div>
+        </div>
+      </div>
+      <div class="almost-card">
+        <div class="almost-quote">"We want to modernize our stack."</div>
+        <div>
+          <div class="almost-problem-label">Problem</div>
+          <div class="almost-problem">Aspiration without specific problem</div>
+        </div>
+        <div>
+          <div class="almost-fix-label">Ask instead</div>
+          <div class="almost-fix">"What happens if you don't modernize in the next 6 months? What breaks?"</div>
+        </div>
+      </div>
+      <div class="almost-card">
+        <div class="almost-quote">"The system is slow."</div>
+        <div>
+          <div class="almost-problem-label">Problem</div>
+          <div class="almost-problem">Technical complaint without business consequence</div>
+        </div>
+        <div>
+          <div class="almost-fix-label">Ask instead</div>
+          <div class="almost-fix">"When it's slow, what's the downstream impact? Are deals waiting, customers churning, SLAs at risk?"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Real value levers -->
+    <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:400;margin-top:48px;margin-bottom:8px">These pass the CFO Test</h3>
+    <p style="font-size:0.92rem;color:var(--text-dim);margin-bottom:20px">The customer said it. A CFO can price it. The rep can use it.</p>
+
+    <div class="real-levers">
+      <div class="real-lever">
+        <div class="tag">Cash Flow Impact</div>
+        <blockquote>"We found out we'd been double-paying that vendor for six months. Nobody caught it."</blockquote>
+        <div class="why">Direct cash leakage. A CFO can calculate the exact loss and the cost of not having controls in place.</div>
+      </div>
+      <div class="real-lever">
+        <div class="tag">Direct Cost Reduction</div>
+        <blockquote>"We're wasting money on a tool that sends 1,000 emails a day but nobody's opening them."</blockquote>
+        <div class="why">Quantifiable waste with a known volume. The cost of the tool plus the opportunity cost of the team managing it.</div>
+      </div>
+      <div class="real-lever">
+        <div class="tag">Scalability</div>
+        <blockquote>"Every time we onboard a new client, it takes two people three days."</blockquote>
+        <div class="why">Labor cost per client, with numbers. A CFO can model what this costs at 2x or 5x current volume.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<Divider />
+
+<!-- Demo -->
+<div class="container">
+  <div class="demo-section" id="demo">
+    <div class="section-label" style="text-align:center">Interactive</div>
+    <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:400;line-height:1.2;margin-bottom:8px;text-align:center">See it in action.</h2>
+    <p style="font-size:1.05rem;color:var(--text-dim);line-height:1.7;max-width:540px;margin:0 auto 32px;text-align:center">Pick a sample transcript or paste your own. We'll find every moment a CFO would care about.</p>
+
+    <div class="demo-panel">
+    <div id="demo-setup">
+      <!-- Sample cards -->
+      <div class="demo-tabs">
+        <div class="demo-tab active" onclick="switchDemoTab('samples')">Choose a Call</div>
+        <div class="demo-tab" onclick="switchDemoTab('paste')">Paste Your Own</div>
+      </div>
+
+      <div id="tab-samples">
+      <div class="sample-cards">
+        <div class="sample-card" data-sample="1" onclick="selectSampleCard(1)">
+          <div class="sample-card-header">
+            <span class="sample-card-outcome sample-card-outcome--won">Won</span>
+            <span class="sample-card-duration">~18 min</span>
+          </div>
+          <h4 class="sample-card-company">MedTech Solutions</h4>
+          <div class="sample-card-product">CyberShield Vulnerability Platform</div>
+          <div class="sample-card-snippet">"Our quarterly pen test found three critical CVEs in dependencies we didn't even know we had."</div>
+        </div>
+        <div class="sample-card" data-sample="2" onclick="selectSampleCard(2)">
+          <div class="sample-card-header">
+            <span class="sample-card-outcome sample-card-outcome--lost">Lost</span>
+            <span class="sample-card-duration">~22 min</span>
+          </div>
+          <h4 class="sample-card-company">FinanceForward</h4>
+          <div class="sample-card-product">DataStream Orchestration Platform</div>
+          <div class="sample-card-snippet">"We're spending more time maintaining Airflow than building actual pipelines."</div>
+        </div>
+        <div class="sample-card" data-sample="3" onclick="selectSampleCard(3)">
+          <div class="sample-card-header">
+            <span class="sample-card-outcome sample-card-outcome--open">Open</span>
+            <span class="sample-card-duration">27 turns</span>
+          </div>
+          <h4 class="sample-card-company">Verity Capital</h4>
+          <div class="sample-card-product">Financial Planning Consultation</div>
+          <div class="sample-card-snippet">"I didn't feel like I was getting personalized advice. It seemed very generic."</div>
+        </div>
+        <div class="sample-card" data-sample="4" onclick="selectSampleCard(4)">
+          <div class="sample-card-header">
+            <span class="sample-card-outcome sample-card-outcome--open">Open</span>
+            <span class="sample-card-duration">23 turns</span>
+          </div>
+          <h4 class="sample-card-company">TechWave</h4>
+          <div class="sample-card-product">Nexiv Project Management Platform</div>
+          <div class="sample-card-snippet">"It often takes too long for new team members to get up to speed."</div>
+        </div>
+        <div class="sample-card" data-sample="5" onclick="selectSampleCard(5)">
+          <div class="sample-card-header">
+            <span class="sample-card-outcome sample-card-outcome--lost">Lost</span>
+            <span class="sample-card-duration">22 turns</span>
+          </div>
+          <h4 class="sample-card-company">LLM Innovate</h4>
+          <div class="sample-card-product">SmartLLM Platform</div>
+          <div class="sample-card-snippet">"We've been struggling with integrating our existing data pipelines with new LLM frameworks."</div>
+        </div>
+        <div class="sample-card" data-sample="6" onclick="selectSampleCard(6)">
+          <div class="sample-card-header">
+            <span class="sample-card-outcome sample-card-outcome--won">Won</span>
+            <span class="sample-card-duration">20 turns</span>
+          </div>
+          <h4 class="sample-card-company">LLM Innovate</h4>
+          <div class="sample-card-product">SmartLLM Platform (Multi-Touch)</div>
+          <div class="sample-card-snippet">"We can't afford to keep throwing money at something that's not working."</div>
+        </div>
+      </div>
+
+      <!-- Transcript viewer (collapsed) -->
+      <div class="transcript-viewer" id="transcript-viewer" style="display:none">
+        <button class="transcript-toggle" id="transcript-toggle" onclick="toggleTranscript()">
+          <span id="toggle-icon">&#9654;</span> View full transcript
+        </button>
+        <div class="transcript-preview" id="transcript-preview" style="display:none">
+          <pre id="transcript-text"></pre>
+        </div>
+      </div>
+      </div><!-- /tab-samples -->
+
+      <div id="tab-paste" style="display:none">
+        <textarea class="transcript-input" id="transcript-input" placeholder="Paste a sales call transcript here...
+
+The more complete the transcript, the better the analysis. Include both sides of the conversation."></textarea>
+        <div class="char-count"><span id="char-count">0</span> characters</div>
+      </div>
+
+      <!-- Analyze button -->
+      <button class="analyze-btn" id="analyze-btn" onclick="runAnalysis()" disabled>Select a call above to analyze</button>
+
+      <p style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center;margin-top:12px">
+        Your transcript is processed securely and not stored.
+      </p>
+      <div class="error-message" id="error-message"></div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-section" id="progress">
+      <div class="progress-card">
+        <div class="progress-title">Scanning for value levers</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="progress-status" id="progress-status">Applying the CFO Test to every moment in the call...</div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="results-section" id="results">
+      <div class="results-header">
+        <h2>Value Lever Analysis</h2>
+        <p>Here's what a CFO would find in this conversation.</p>
+      </div>
+
+      <div id="results-content">
+        <!-- Populated by JS -->
+      </div>
+
+    </div>
+
+    </div><!-- /demo-panel -->
+  </div>
+</div>
+
+</DemoLayout>
+
+<style is:global>
+  .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* Use case cards */
+  .use-cases-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  @media (max-width: 700px) { .use-cases-grid { grid-template-columns: 1fr; } }
+  .use-case-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 24px; position: relative;
+  }
+  .use-case-num {
+    font-family: var(--font-display); font-size: 1.6rem; color: var(--accent);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .use-case-card h4 {
+    font-size: 0.95rem; font-weight: 600; margin-bottom: 8px;
+  }
+  .use-case-card p {
+    font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;
+  }
+
+  /* CFO Test card */
+  .cfo-test-card {
+    background: var(--navy-surface); border: 1px solid var(--navy-border);
+    border-radius: 14px; padding: 40px; margin-bottom: 40px; text-align: center;
+  }
+  .cfo-test-card .question {
+    font-family: var(--font-display); font-size: 1.6rem; color: #fff;
+    line-height: 1.3; margin-bottom: 16px; font-style: italic;
+  }
+  .cfo-test-card .caveat {
+    font-size: 0.9rem; color: var(--navy-text-dim);
+  }
+
+  /* CFO columns */
+  .cfo-columns {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  @media (max-width: 700px) { .cfo-columns { grid-template-columns: 1fr; } }
+
+  .category-list { list-style: none; }
+  .category-item {
+    padding: 16px 0; border-bottom: 1px solid var(--navy-border);
+  }
+  .category-item:last-child { border-bottom: none; }
+  .category-item h4 {
+    font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 4px;
+  }
+  .category-item p {
+    font-size: 0.82rem; color: var(--navy-text-dim); line-height: 1.5;
+  }
+
+  .strength-card {
+    background: var(--navy-surface); border-radius: 10px;
+    padding: 24px; margin-bottom: 16px;
+  }
+  .strength-card h4 {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 8px; padding-bottom: 8px;
+    border-bottom: 2px solid;
+  }
+  .strength-card h4.quantified { color: var(--emerald); border-color: var(--emerald); }
+  .strength-card h4.unquantified { color: var(--amber); border-color: var(--amber); }
+  .strength-card .desc {
+    font-size: 0.85rem; color: var(--navy-text-dim); margin-bottom: 12px;
+  }
+  .strength-card blockquote {
+    font-size: 0.88rem; font-style: italic; color: var(--navy-text);
+    border-left: 3px solid var(--navy-border); padding-left: 14px;
+  }
+
+  /* Almost section */
+  .almost-grid {
+    display: grid; gap: 16px; margin: 32px 0;
+  }
+  .almost-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 24px; display: grid;
+    grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: start;
+  }
+  @media (max-width: 700px) { .almost-card { grid-template-columns: 1fr; } }
+  .almost-quote {
+    font-style: italic; font-size: 0.95rem; color: var(--text);
+    position: relative; padding-left: 16px;
+    border-left: 3px solid var(--rose);
+  }
+  .almost-problem {
+    font-size: 0.85rem; color: var(--text-dim); line-height: 1.5;
+  }
+  .almost-problem-label {
+    font-family: var(--font-mono); font-size: 9px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--rose);
+    margin-bottom: 4px;
+  }
+  .almost-fix {
+    font-size: 0.88rem; color: var(--accent); font-weight: 500;
+    background: var(--accent-dim); border-radius: 6px; padding: 12px 14px;
+  }
+  .almost-fix-label {
+    font-family: var(--font-mono); font-size: 9px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  /* Real lever cards */
+  .real-levers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 40px; }
+  @media (max-width: 700px) { .real-levers { grid-template-columns: 1fr; } }
+  .real-lever {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 24px; border-top: 3px solid var(--emerald);
+  }
+  .real-lever .tag {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--emerald);
+    margin-bottom: 12px;
+  }
+  .real-lever blockquote {
+    font-size: 0.92rem; font-style: italic; color: var(--text);
+    margin-bottom: 12px; line-height: 1.5;
+  }
+  .real-lever .why {
+    font-size: 0.82rem; color: var(--text-dim); line-height: 1.5;
+  }
+
+  /* Demo section */
+  .demo-section { padding: 60px 0; }
+
+  /* Sample cards */
+  .sample-cards {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 700px) { .sample-cards { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 500px) { .sample-cards { grid-template-columns: 1fr; } }
+  .sample-card {
+    background: var(--surface); border: 2px solid var(--border);
+    border-radius: 10px; padding: 18px; cursor: pointer;
+    transition: all 0.2s; position: relative;
+  }
+  .sample-card:hover { border-color: var(--accent-light); transform: translateY(-1px); }
+  .sample-card.selected { border-color: var(--accent); background: var(--accent-dim); }
+  .sample-card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+  }
+  .sample-card-outcome {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .sample-card-outcome--won { background: var(--emerald-dim); color: var(--emerald); }
+  .sample-card-outcome--lost { background: var(--rose-dim); color: var(--rose); }
+  .sample-card-outcome--open { background: var(--amber-dim); color: var(--amber); }
+  .sample-card-duration {
+    font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
+  }
+  .sample-card-company {
+    font-size: 0.95rem; font-weight: 600; margin-bottom: 2px;
+  }
+  .sample-card-product {
+    font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;
+  }
+  .sample-card-snippet {
+    font-size: 0.82rem; color: var(--text-dim); font-style: italic;
+    line-height: 1.5; border-left: 2px solid var(--border-bright);
+    padding-left: 10px;
+  }
+
+  /* Transcript viewer */
+  .transcript-viewer {
+    margin-bottom: 20px;
+  }
+  .transcript-toggle {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+    color: var(--accent); background: none; border: 1px solid var(--border);
+    border-radius: 6px; padding: 8px 16px; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; gap: 8px;
+  }
+  .transcript-toggle:hover { background: var(--accent-dim); border-color: var(--accent); }
+  .transcript-toggle.open #toggle-icon { transform: rotate(90deg); }
+  #toggle-icon { display: inline-block; font-size: 9px; transition: transform 0.2s; }
+  .transcript-preview {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 0 0 10px 10px; border-top: none;
+    max-height: 300px; overflow-y: auto; margin-top: -1px;
+  }
+  .transcript-preview pre {
+    font-family: var(--font-body); font-size: 0.82rem; color: var(--text-dim);
+    line-height: 1.6; white-space: pre-wrap; word-wrap: break-word;
+    padding: 16px 20px; margin: 0;
+  }
+
+  /* Demo panel */
+  .demo-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+    position: relative;
+  }
+  .demo-panel::before {
+    content: 'DEMO'; position: absolute; top: -12px; left: 28px;
+    background: var(--accent); color: #fff; font-family: var(--font-mono);
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    padding: 2px 12px; border-radius: 4px;
+  }
+  @media (max-width: 700px) {
+    .demo-panel { padding: 20px; }
+  }
+
+  /* Demo tabs */
+  .demo-tabs {
+    display: flex; gap: 0; margin-bottom: 24px;
+  }
+  .demo-tab {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+    padding: 10px 24px; cursor: pointer; color: var(--text-muted);
+    border-bottom: 2px solid var(--border); transition: all 0.2s;
+  }
+  .demo-tab:hover { color: var(--text-dim); }
+  .demo-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .transcript-input {
+    width: 100%; min-height: 200px; max-height: 400px; padding: 20px;
+    font-family: var(--font-body); font-size: 0.9rem; line-height: 1.6;
+    border: 1px solid var(--border); border-radius: 0 0 10px 10px;
+    background: var(--surface); color: var(--text); resize: vertical;
+  }
+  .transcript-input:focus { outline: none; border-color: var(--accent); }
+  .transcript-input::placeholder { color: var(--text-muted); }
+
+  .char-count {
+    font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
+    text-align: right; margin-top: 6px;
+  }
+
+  /* Results */
+  .results-section { display: none; padding: 24px 0 0; }
+  .results-section.active { display: block; }
+  .results-header { text-align: center; margin-bottom: 40px; }
+  .results-header h2 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 8px; }
+  .results-header p { font-size: 0.95rem; color: var(--text-dim); }
+
+  /* Summary badges/explanation/recommendation */
+  .summary-badges {
+    display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .summary-badge {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .summary-explanation {
+    font-size: 0.92rem; color: var(--text-dim); line-height: 1.7; margin-bottom: 16px;
+  }
+  .summary-recommendation {
+    background: var(--accent-dim); border-radius: 8px; padding: 16px 20px;
+  }
+  .summary-recommendation-label {
+    font-family: var(--font-mono); font-size: 9px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .summary-recommendation p { font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
+  /* Lever cards */
+  .lever-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 16px; overflow: hidden;
+  }
+  .lever-header {
+    padding: 16px 20px; display: flex; justify-content: space-between;
+    align-items: flex-start; gap: 12px; flex-wrap: wrap;
+  }
+  .lever-title { font-size: 0.95rem; font-weight: 600; }
+  .lever-badges { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
+  .lever-badge {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    padding: 3px 10px; border-radius: 20px; flex-shrink: 0;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .lever-badge--type { background: var(--accent-dim); color: var(--accent); }
+  .lever-badge--quantified { background: var(--emerald-dim); color: var(--emerald); }
+  .lever-badge--unquantified { background: var(--amber-dim); color: var(--amber); }
+
+  .lever-body { padding: 0 20px 20px; }
+  .lever-quote {
+    background: var(--surface-recessed); border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0; padding: 12px 16px;
+    font-size: 0.88rem; font-style: italic; color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+  .lever-cfo-impact {
+    font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px;
+  }
+  .lever-cfo-impact strong { color: var(--text); }
+
+  /* Rep scorecard */
+  .rep-scorecard {
+    background: var(--surface-recessed); border-radius: 8px;
+    padding: 16px 20px; margin-bottom: 16px;
+  }
+  .rep-scorecard-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px; flex-wrap: wrap; gap: 8px;
+  }
+  .rep-scorecard-label {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted);
+  }
+  .rep-badge {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    padding: 3px 10px; border-radius: 20px; text-transform: uppercase;
+  }
+  .rep-badge--strong { background: var(--emerald-dim); color: var(--emerald); }
+  .rep-badge--moderate { background: var(--amber-dim); color: var(--amber); }
+  .rep-badge--missed { background: var(--rose-dim); color: var(--rose); }
+  .rep-analysis { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 10px; }
+  .rep-recommendation {
+    background: var(--surface); border-radius: 6px; padding: 12px 14px;
+    font-size: 0.85rem; color: var(--text); line-height: 1.5;
+  }
+
+  /* Urgency message */
+  .urgency-section {
+    background: var(--accent-dim); border-radius: 8px; padding: 16px 20px;
+  }
+  .urgency-label {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .urgency-message {
+    font-size: 0.88rem; font-style: italic; color: var(--text); line-height: 1.6;
+    margin-bottom: 6px;
+  }
+  .urgency-timing {
+    font-size: 0.8rem; color: var(--text-muted);
+  }
+</style>
+
+<script is:inline>
+// Sample transcripts (dialogue only, metadata stripped)
+const SAMPLES = [
+  null, // index 0 = "Paste Your Own"
+  {
+    label: 'CyberShield Vulnerability Platform',
+    company: 'MedTech Solutions',
+    outcome: 'won',
+    transcript: `Sarah Chen: Hi, is this Marcus from CyberShield?
+
+Marcus Webb: Hey Sarah, yes it is! Thanks for taking the time today. I know your calendar's pretty packed — I saw you just came out of a board meeting.
+
+Sarah Chen: Ha, yeah, it's been a day. But this is important. We had an incident two weeks ago — nothing catastrophic, but it exposed some gaps in our vulnerability scanning. My CTO basically told me to have a shortlist by Friday.
+
+Marcus Webb: Got it, so there's some urgency here. Before I jump into what we do, can you walk me through what happened? I want to make sure I'm not just giving you a generic pitch.
+
+Sarah Chen: Sure. We're a 200-person healthtech company. We process patient data through about 40 microservices running on AWS. Two weeks ago, our quarterly pen test found three critical CVEs in dependencies we didn't even know we had. One had been sitting there for four months.
+
+Marcus Webb: Four months is a long time for a critical CVE, especially with patient data. What are you using today for scanning?
+
+Sarah Chen: We have Snyk on some repos, but adoption is inconsistent. Maybe 60% of our teams actually use it. The rest just... don't. And nobody's scanning our container images or infrastructure-as-code. It's patchwork.
+
+Marcus Webb: That's really common at your stage, honestly. You grew fast, teams picked their own tools, and now there's no single view of risk. Is that fair?
+
+Sarah Chen: That's exactly it. And with HIPAA, we can't afford blind spots. Our compliance team is breathing down my neck.
+
+Marcus Webb: OK so let me ask — if you could wave a magic wand, what does the ideal state look like for you in six months?
+
+Sarah Chen: Every repo scanned automatically on every PR. Container images scanned before they hit production. A single dashboard my CTO can look at and say "here's our risk posture." And honestly, something that doesn't require my engineers to change their workflow too much. We tried rolling out a tool last year and adoption was terrible because it added too many steps.
+
+Marcus Webb: That last point is huge. Let me show you something. This is CyberShield running inside a GitHub PR. See how it surfaces the vulnerability inline, right where the developer is already working? No context switching, no separate dashboard to check.
+
+Sarah Chen: Oh, that's nice. So it comments directly on the PR?
+
+Marcus Webb: Exactly. And it doesn't just say "you have a vulnerability" — it tells you the fix. See this one? It's saying "upgrade lodash from 4.17.19 to 4.17.21" and it can auto-generate the PR to fix it. One click.
+
+Sarah Chen: What about false positives? That was our biggest complaint with Snyk. Engineers started ignoring alerts because half of them were noise.
+
+Marcus Webb: Great question. We have a reachability engine — we actually analyze whether the vulnerable code path is invoked in your application. If a CVE exists in a dependency but your code never calls the affected function, we flag it as low priority instead of critical. Typically cuts noise by 60-70%.
+
+Sarah Chen: That's... actually really compelling. We've been fighting the noise problem for a year.
+
+Marcus Webb: And on the container side — we scan images in your CI pipeline and also do continuous monitoring of what's running in your EKS clusters. So if a new CVE drops tomorrow for an image you deployed last month, you'll know within hours, not at your next quarterly pen test.
+
+Sarah Chen: What does pricing look like? We have about 150 repositories and maybe 80 container images in production.
+
+Marcus Webb: For your scale, we'd be looking at our Growth tier — that covers unlimited repos and up to 200 container images. It's $2,800 a month, annual commitment. That includes onboarding and a dedicated CSM for the first 90 days.
+
+Sarah Chen: That's higher than what we're paying for Snyk.
+
+Marcus Webb: It probably is, yeah. The question I'd ask is — what did that four-month-old CVE cost you? Not just the incident response, but the board conversation, the compliance review, the eng hours to scramble and patch. Usually when we do that math with customers, the delta in tooling cost is a rounding error.
+
+Sarah Chen: Fair point. I need to bring my CTO and our head of compliance into the next conversation. Can we do a technical deep dive next week? Maybe Tuesday?
+
+Marcus Webb: Absolutely. I'll send over a calendar invite for Tuesday. I'll also include a security assessment template — if you can fill in the basics about your AWS setup beforehand, we can make the deep dive really targeted instead of generic.
+
+Sarah Chen: Perfect. Send it over. I'll have my team fill it out Monday.
+
+Marcus Webb: Great. And Sarah — I'll also send you a case study from MedBridge. They're a similar size healthtech company, had almost the exact same problem. Might be useful for your CTO.
+
+Sarah Chen: That would be really helpful. Thanks Marcus.
+
+Marcus Webb: Thank you, Sarah. Talk Tuesday.`
+  },
+  {
+    label: 'DataStream Orchestration Platform',
+    company: 'FinanceForward',
+    outcome: 'lost',
+    transcript: `Ryan Torres: Hey, this is Ryan.
+
+Priya Sharma: Hi Ryan! It's Priya from DataStream. Thanks for hopping on. How's your day going?
+
+Ryan Torres: Honestly, kind of hectic. We're in the middle of migrating off Airflow and everything's on fire. But that's kind of why I'm talking to you, so...
+
+Priya Sharma: Ha, well hopefully I can help put out some of those fires. So you mentioned in your form submission that you're looking at alternatives to Airflow. Can you tell me more about what's driving the move?
+
+Ryan Torres: Yeah so we've been on Airflow for about three years. It was fine when we had 50 DAGs. Now we have 400-something and it's a nightmare. The scheduler falls over constantly, we're spending more time maintaining Airflow than building actual pipelines, and our data scientists can't self-serve at all — every request goes through my team.
+
+Priya Sharma: 400 DAGs is a lot. How big is your data engineering team?
+
+Ryan Torres: Four people. Including me.
+
+Priya Sharma: Four people managing 400 DAGs — that's a heavy load. What's the business impact when the scheduler goes down?
+
+Ryan Torres: Our risk models run on the outputs of about 30 of those DAGs. When they're late, the trading desk doesn't have updated risk numbers. Last month we missed an SLA twice and my VP had to explain it to the head of trading. It was not a fun conversation.
+
+Priya Sharma: Yeah, that's the kind of thing that gets executive attention fast. So DataStream could definitely help here. We're a fully managed orchestration platform — no scheduler to babysit, auto-scaling, and we have a self-serve UI so your data scientists can build and monitor their own pipelines.
+
+Ryan Torres: That sounds good in theory. How does migration work? We can't just flip a switch — we have 400 DAGs with complex dependencies.
+
+Priya Sharma: Totally understand. We have an Airflow migration toolkit that can convert most DAGs automatically. Typically we see about 70% auto-convert, and the remaining 30% need manual adjustment. We assign a migration engineer to work with your team.
+
+Ryan Torres: 70%... so that's still 120 DAGs we'd need to manually rewrite?
+
+Priya Sharma: Rewrite is a strong word — it's more like adjusting. Usually it's things like custom operators or complex XCom usage that don't translate 1:1. But our migration engineer handles the heavy lifting.
+
+Ryan Torres: How long does a migration typically take for our scale?
+
+Priya Sharma: For 400 DAGs, probably 8-10 weeks end to end. First two weeks we do assessment and auto-conversion. Then the manual adjustments. Then parallel running to validate outputs match.
+
+Ryan Torres: Eight to ten weeks is... a lot. We're kind of hoping to be off Airflow by end of Q2. That's seven weeks from now.
+
+Priya Sharma: We could potentially accelerate that with additional migration engineering resources. It would add to the cost but we've done compressed timelines before.
+
+Ryan Torres: What does the base cost look like?
+
+Priya Sharma: For your volume — 400 DAGs, I'm assuming maybe 50-100TB of data processed daily? — you'd be on our Business tier. That's $4,500 a month. The migration package is a one-time $15,000.
+
+Ryan Torres: Hmm. We're currently running Airflow on a couple of EC2 instances that cost us maybe $800 a month. So that's a pretty big jump.
+
+Priya Sharma: It is a bigger number, for sure. But think about the hidden costs — your team's time maintaining Airflow, the missed SLAs, the fact that data scientists can't self-serve. If each of your four engineers spends even 30% of their time on Airflow maintenance, that's more than one full headcount.
+
+Ryan Torres: I get the TCO argument. Let me push back on something though — we looked at Dagster and Prefect too. Prefect has a free tier and their migration story is similar. What makes DataStream worth 5x the cost?
+
+Priya Sharma: Great question. The big differentiators are our real-time streaming support — Prefect and Dagster are really batch-first — and our compliance features. Given you're in finance, things like SOC 2 audit trails, data lineage, and PII detection built into the platform. With Prefect you'd need to bolt those on separately.
+
+Ryan Torres: The compliance stuff is interesting. We do need SOC 2 audit trails. But I'm not sure we need real-time streaming right now. That feels like paying for something we won't use for a while.
+
+Priya Sharma: That's fair. I'd say the streaming piece is more about future-proofing, but I hear you that it's not today's problem.
+
+Ryan Torres: Can I be honest with you? The compliance features are compelling but I'm having a hard time justifying 5x the cost to my VP when Prefect checks most of the boxes. We're a lean team and budget is tight.
+
+Priya Sharma: I appreciate the honesty. Would it help if I put together an ROI analysis? We can quantify the engineering time savings and SLA risk reduction. Sometimes having those numbers makes the budget conversation easier.
+
+Ryan Torres: You can send it over, sure. But I think we're going to go with Prefect for now and see how it goes. If we hit scaling issues or compliance becomes a blocker, you'd be our first call.
+
+Priya Sharma: I understand, Ryan. I'll send the ROI doc anyway — no pressure, but it'll be there if you need it. And I'll check in next quarter to see how the Prefect migration went.
+
+Ryan Torres: That sounds good. Thanks for being straightforward, Priya. I appreciate you not giving me a hard sell.
+
+Priya Sharma: Of course. Good luck with the migration — I know how stressful those can be. Talk soon.
+
+Ryan Torres: Thanks. Bye.`
+  },
+  {
+    label: 'Financial Planning Consultation',
+    company: 'Verity Capital',
+    outcome: 'open',
+    transcript: `Sales Rep: Good afternoon, this is Andy from Verity Capital. Am I speaking with Jane?
+
+Customer: Yes, this is Jane.
+
+Sales Rep: Hi Jane, thanks for taking my call. How are you today?
+
+Customer: I'm doing well, thanks. How can I help you?
+
+Sales Rep: Great to hear. I wanted to discuss some opportunities where Verity Capital can assist you with your financial planning and investment needs. Do you have a few moments to chat?
+
+Customer: Sure, I have a few minutes.
+
+Sales Rep: Fantastic. So, Jane, can you tell me a bit about your current financial situation and any pain points you might be experiencing?
+
+Customer: Well, I've been trying to save and invest, but it's been challenging to know where to put my money. The market seems so volatile, and I'm not sure who to trust.
+
+Sales Rep: I understand how that could be overwhelming. Market volatility and trusting the right advisors are common concerns. Have you worked with a financial planner before?
+
+Customer: I have, but honestly, I didn't feel like I was getting personalized advice. It seemed very generic, and I wasn't seeing the returns I expected.
+
+Sales Rep: I'm sorry to hear that. Personalization is crucial. At Verity Capital, we emphasize creating tailored financial strategies to meet individual needs. If you don't mind me asking, what specific goals are you hoping to achieve with your investments?
+
+Customer: Mainly, I'm looking to build a solid retirement fund and perhaps save for my kids' education. But again, the lack of transparency and understanding has been a big hurdle.
+
+Sales Rep: Those are important goals. At Verity Capital, we prioritize transparency and education. We ensure you understand every step of your financial plan. Can I share how we could structure a solution for your retirement and education savings?
+
+Customer: Sure, what do you have in mind?
+
+Sales Rep: We would start with a thorough assessment of your current financial status, risk tolerance, and future goals. Based on that, we'd develop a customized investment plan focusing on a mix of low-risk bonds and higher-yield stocks, balanced to meet your specific targets. Additionally, we provide regular updates and reviews, so you're always informed about how your investments are performing.
+
+Customer: That sounds interesting, but how do I know your advice will be truly personalized?
+
+Sales Rep: That's a valid concern. Unlike other firms, we limit the number of clients each advisor handles to ensure you're getting dedicated attention. Would you be interested in scheduling a complimentary consultation to go over your needs in more detail?
+
+Customer: Yes, I think that could be helpful.
+
+Sales Rep: Perfect! How does your schedule look this week? We can set up a meeting either in person or via video call, whichever you're more comfortable with.
+
+Customer: I have some availability on Thursday afternoon. Is that possible?
+
+Sales Rep: Thursday afternoon works great. How about 2 PM?
+
+Customer: That works for me.
+
+Sales Rep: Excellent! I'll send you a calendar invite for Thursday at 2 PM. We'll go over everything in detail and answer any questions you might have.
+
+Customer: Sounds good. Thank you.
+
+Sales Rep: Thank you, Jane. Looking forward to our meeting. Have a great day!
+
+Customer: You too. Bye.
+
+Sales Rep: Goodbye.`
+  },
+  {
+    label: 'Project Management Platform',
+    company: 'Nexiv Solutions / TechWave',
+    outcome: 'open',
+    transcript: `Sales Rep: Hi, this is Jamie from Nexiv Solutions. Am I speaking with Alex?
+
+Customer: Yes, this is Alex.
+
+Sales Rep: Great! How are you doing today?
+
+Customer: I'm doing well, thanks. How about you?
+
+Sales Rep: I'm doing well, thank you. So, Alex, I understand you're leading the project management team at TechWave, is that right?
+
+Customer: Yes, that's correct.
+
+Sales Rep: Excellent. I reached out because I've heard that a lot of project management teams like yours are facing some challenges with managing multiple workflows efficiently. Is that something you're experiencing as well?
+
+Customer: Definitely. We have multiple projects running simultaneously, and sometimes it feels like chaos trying to keep everything on track.
+
+Sales Rep: I can imagine how stressful that must be. What are some specific issues you've been encountering?
+
+Customer: Well, for starters, our current software isn't very intuitive. It often takes too long for new team members to get up to speed. Plus, our reporting features are lacking, so it's hard to get a clear picture of project statuses.
+
+Sales Rep: Those are common pain points we hear. Our solution at Nexiv is designed to be user-friendly and offers robust reporting capabilities that provide real-time insights. Have you had a chance to look into any other solutions so far?
+
+Customer: We've looked at a few, but they either lack the features we need or are too expensive.
+
+Sales Rep: I understand. Budget constraints are always a consideration. At Nexiv, we offer flexible pricing models that can be tailored to fit different needs and budgets. Additionally, our platform is quite comprehensive in features, which might eliminate the need for multiple tools.
+
+Customer: That sounds interesting, but we already invested quite a bit in our current software. Switching over would be a huge undertaking.
+
+Sales Rep: Absolutely, migrating to a new platform is no small task. However, we have a dedicated onboarding team that ensures a smooth transition. We also provide extensive training and support, so your team can get up to speed quickly. What if we arranged a demo so you can see how our platform can specifically address your challenges?
+
+Customer: A demo sounds like a good start, but I'm worried about the downtime during the transition.
+
+Sales Rep: I hear you, and minimizing downtime is a top priority for us as well. During the demo, we can also discuss our phased implementation strategy, which ensures that there's no significant disruption to your ongoing projects. Would next Tuesday at 10 AM work for you?
+
+Customer: Tuesday at 10 AM works for me.
+
+Sales Rep: Perfect! I'll send you a calendar invite with all the details. If you have any specific features you'd like us to focus on during the demo, feel free to let me know.
+
+Customer: Will do. Thanks, Jamie.
+
+Sales Rep: Thank you, Alex. Looking forward to showing you how Nexiv Solutions can make your project management more efficient. Have a great day!
+
+Customer: You too, bye.
+
+Sales Rep: Goodbye.`
+  },
+  {
+    label: 'SmartLLM Platform',
+    company: 'LLM Innovate',
+    outcome: 'lost',
+    transcript: `Dr. Emily Chen: Hey, so I was looking into your SmartLLM Platform... sorry, what I'm trying to say, Hey, so I was looking into your SmartLLM Platform. Got a couple questions.
+
+Sales Rep: Sure thing, Dr. Chen! What's on your mind?
+
+Dr. Emily Chen: Well, we've been struggling with, um, integrating our existing data pipelines with new LLM frameworks.
+
+Sales Rep: Totally get that. SmartLLM has some seamless API integration options that should help with that.
+
+Dr. Emily Chen: Seamless is good, but like, how's it handle... uh, the actual complexity? I mean, our stuff is pretty bespoke.
+
+Sales Rep: Right, I hear you. It can get complicated, but we offer a lot of support and, um, documentation to guide you through it.
+
+Dr. Emily Chen: Documentation is cool, but I'm really worried about security, like, how you handle sensitive data.
+
+Sales Rep: Great point! We implement robust security measures, like encryption and access controls.
+
+Dr. Emily Chen: Encryption's good, but, uh, what about compliance? We're pretty strict on that.
+
+Sales Rep: Absolutely!!! We're compliant with major standards, like GDPR and HIPAA, so that should cover most of your needs.
+
+Dr. Emily Chen: Yeah, okay, but still, the integration part... if it's too complex, I dunno, we might just stick with what we have.
+
+Sales Rep: I totally understand the hesitation. But, uh, once you get it set up, the model training automation really speeds things up.
+
+Dr. Emily Chen: Automation is nice, but we gotta make sure it doesn't add more layers, you know?
+
+Sales Rep: For sure! It's designed to reduce operational costs and, um, enhance performance. But yeah, it's a balancing act.
+
+Dr. Emily Chen: Yeah, I mean, are there other companies using it successfully? Like did you have examples or case studies?
+
+Sales Rep: Yes! We've had clients in your space who've seen great improvements. I can send over case studies if you want.
+
+Dr. Emily Chen: Uh, maybe. But honestly, I'm still skeptical about the whole thing. Just feels risky.
+
+Sales Rep: That's completely valid. It's a big decision. We'd never want you to jump in without being sure.
+
+Dr. Emily Chen: Right... so if we did move forward, what's the pricing like?
+
+Sales Rep: It's a subscription model, $499/month, and you get full access to all features and updates.
+
+Dr. Emily Chen: Hmm, okay. I'll need to run this by my team. Just, uh, feels like a lot of change.
+
+Sales Rep: Of course, take your time! Change can feel overwhelming, but I'm here to help with any questions.`
+  },
+  {
+    label: 'SmartLLM Platform (Multi-Touch)',
+    company: 'LLM Innovate',
+    outcome: 'won',
+    transcript: `Jordan Thompson: Hey, so I've been looking at our LLM setup and honestly, it's kinda frustrating...
+
+Jordan Thompson: Like, we're having a hard time integrating it with our workflows... it's just not smooth ya know?
+
+Sales Rep: Totally get that, Jordan. Integration can be a headache sometimes. Can you tell me more about the specific issues you're facing?
+
+Jordan Thompson: Yeah, well for starters, it FEELS like the current tools just don't scale... we hit bottlenecks a lot.
+
+Jordan Thompson: And like, we can't afford to keep throwing money at something that's not working.
+
+Sales Rep: I hear ya. That's a common concern. Our SmartLLM Platform might help with that, like... it automates a lot of model training, which could save costs.
+
+--- a week later ---
+
+Sales Rep: Hi Jordan Thompson, I wanted to follow up on our previous conversation about SmartLLM Platform. Have you had a chance to think more about it?
+
+Jordan Thompson: Hmm, sounds interesting but... what's the catch? Cuz I've looked at other solutions and they're just... ugh, complicated.
+
+Sales Rep: For sure, complexity is a huge barrier. But SmartLLM is designed to be pretty user-friendly. It also has seamless API integration for... ya know, making things smooth.
+
+Jordan Thompson: API integration... but isn't that usually a pain? Like, what if it doesn't work with what we already have?
+
+Sales Rep: That's a valid concern. But we've done a lot of tests with various systems; it's pretty flexible. Plus, we offer support to ease that process.
+
+Jordan Thompson: Support, okay... but I gotta ask, what's the price point? We can't go all in without knowing.
+
+Sales Rep: It's $499 a month but, honestly, that's way cheaper compared to what... companies usually pay for operational costs with other platforms.
+
+Jordan Thompson: Right, but that's still a decent chunk... and what if we're not satisfied with it? Seems risky.
+
+Sales Rep: I get that. But we also have a comprehensive analytics dashboard that helps monitor performance, so you can see if it's worth it.
+
+Jordan Thompson: Analytics could be cool... like, what kind of insights do we get?
+
+Sales Rep: You'd get detailed reports on model performance, usage stats -- it helps in making informed decisions.
+
+Jordan Thompson: Alright, that does sound useful... but still, what about integration? I don't wanna waste time.
+
+Sales Rep: We can set up a demo session to show how it fits into your current system! What do you think?`
+  }
+];
+
+let selectedSample = null;
+let pasteMode = false;
+
+function selectSampleCard(index) {
+  pasteMode = false;
+  selectedSample = index;
+
+  // Highlight selected card
+  document.querySelectorAll('.sample-card').forEach(c =>
+    c.classList.toggle('selected', parseInt(c.dataset.sample) === index));
+
+  // Show transcript viewer
+  const viewer = document.getElementById('transcript-viewer');
+  viewer.style.display = 'block';
+  document.getElementById('transcript-text').textContent = SAMPLES[index].transcript;
+
+  // Collapse preview when switching
+  document.getElementById('transcript-preview').style.display = 'none';
+  const toggle = document.getElementById('transcript-toggle');
+  toggle.classList.remove('open');
+  toggle.innerHTML = '<span id="toggle-icon">&#9654;</span> View full transcript';
+
+  // Enable button
+  const btn = document.getElementById('analyze-btn');
+  btn.disabled = false;
+  btn.textContent = 'Find Value Levers';
+}
+
+function toggleTranscript() {
+  const preview = document.getElementById('transcript-preview');
+  const toggle = document.getElementById('transcript-toggle');
+  const isOpen = preview.style.display !== 'none';
+  preview.style.display = isOpen ? 'none' : 'block';
+  toggle.classList.toggle('open', !isOpen);
+  toggle.innerHTML = isOpen
+    ? '<span id="toggle-icon">&#9654;</span> View full transcript'
+    : '<span id="toggle-icon">&#9654;</span> Hide transcript';
+}
+
+function switchDemoTab(tab) {
+  const tabs = document.querySelectorAll('.demo-tab');
+  tabs[0].classList.toggle('active', tab === 'samples');
+  tabs[1].classList.toggle('active', tab === 'paste');
+
+  document.getElementById('tab-samples').style.display = tab === 'samples' ? 'block' : 'none';
+  document.getElementById('tab-paste').style.display = tab === 'paste' ? 'block' : 'none';
+
+  const btn = document.getElementById('analyze-btn');
+
+  if (tab === 'paste') {
+    pasteMode = true;
+    selectedSample = null;
+    document.querySelectorAll('.sample-card').forEach(c => c.classList.remove('selected'));
+    document.getElementById('transcript-viewer').style.display = 'none';
+    btn.disabled = false;
+    btn.textContent = 'Find Value Levers';
+    document.getElementById('transcript-input').focus();
+  } else {
+    pasteMode = false;
+    if (!selectedSample) {
+      btn.disabled = true;
+      btn.textContent = 'Select a call above to analyze';
+    }
+  }
+}
+
+function updateCharCount() {
+  document.getElementById('char-count').textContent =
+    document.getElementById('transcript-input').value.length.toLocaleString();
+}
+
+document.getElementById('transcript-input').addEventListener('input', updateCharCount);
+
+// Demo responses for each sample transcript
+const DEMO_RESULTS = {
+  1: { // CyberShield — Won
+    levers: [
+      {
+        title: "Critical CVE undetected four months",
+        type: "risk_mitigation",
+        strength: "Quantified",
+        customerQuote: "Our quarterly pen test found three critical CVEs in dependencies we didn't even know we had. One had been sitting there for four months.",
+        cfoImpact: "Four months of undetected critical vulnerabilities in a HIPAA-regulated environment with patient data — the compliance exposure alone could mean six-figure fines, plus incident response costs if exploited.",
+        repCaught: "Yes — Strong",
+        repAnalysis: "Marcus immediately recognized the severity and asked a quantifying follow-up: 'Four months is a long time for a critical CVE, especially with patient data. What are you using today for scanning?' This anchored the conversation to risk, not features.",
+        repRecommendation: "Excellent instinct to tie the CVE timeline to patient data and compliance. This set the tone for the entire call.",
+        urgencyMessage: "You had a critical CVE sitting in production for four months before anyone noticed. Your next quarterly pen test is weeks away — every day between now and then is another day of undetected exposure in a HIPAA environment.",
+        urgencyTiming: "In the follow-up email before the Tuesday deep dive, to reinforce urgency with the CTO."
+      },
+      {
+        title: "60% scanning adoption gap",
+        type: "risk_mitigation",
+        strength: "Quantified",
+        customerQuote: "We have Snyk on some repos, but adoption is inconsistent. Maybe 60% of our teams actually use it. The rest just... don't. And nobody's scanning our container images or infrastructure-as-code. It's patchwork.",
+        cfoImpact: "40% of repos plus all container images and IaC are completely unscanned — the blind spot is larger than the coverage. Any vulnerability in that 40% is invisible until it's exploited.",
+        repCaught: "Yes — Moderate",
+        repAnalysis: "Marcus validated the problem ('That's really common at your stage') which built credibility, but didn't quantify the gap further. He could have asked how many of their 40 microservices fall in the unscanned 40%.",
+        repRecommendation: "Good validation, but a stronger move would be: 'Of your 40 microservices, how many are in that unscanned 40%? And which ones handle patient data?' That connects the gap directly to HIPAA risk.",
+        urgencyMessage: "40% of your repos and all container images are running unscanned. With 40 microservices processing patient data, every week without full coverage is another week where a critical vulnerability could be sitting in your most sensitive systems undetected.",
+        urgencyTiming: "Include in the security assessment template sent before the Tuesday meeting."
+      },
+      {
+        title: "HIPAA compliance under pressure",
+        type: "risk_mitigation",
+        strength: "Unquantified",
+        customerQuote: "And with HIPAA, we can't afford blind spots. Our compliance team is breathing down my neck.",
+        cfoImpact: "HIPAA violations can result in fines from $100 to $50,000 per violation, with annual maximums of $1.5M per category. The compliance team's urgency signals this is a board-level risk.",
+        repCaught: "Yes — Moderate",
+        repAnalysis: "Marcus acknowledged HIPAA but didn't probe the compliance pressure further. He moved to a 'magic wand' question instead of quantifying the compliance risk.",
+        repRecommendation: "Before the vision question, ask: 'When you say the compliance team is breathing down your neck — is this coming from a recent audit, or is there a compliance review coming up? What's the timeline?' This turns a general concern into a deadline.",
+        urgencyMessage: "Your compliance team is already flagging gaps. The question isn't whether an auditor will find the same blind spots — it's whether you'll have fixed them before they do.",
+        urgencyTiming: "When positioning for the CTO and head of compliance in the Tuesday deep dive."
+      },
+      {
+        title: "Failed tool rollout last year",
+        type: "direct_cost_reduction",
+        strength: "Unquantified",
+        customerQuote: "We tried rolling out a tool last year and adoption was terrible because it added too many steps.",
+        cfoImpact: "A failed tool rollout means wasted license costs, wasted engineering time on evaluation and implementation, and the team is still exposed. The sunk cost plus ongoing risk is the real price.",
+        repCaught: "Yes — Strong",
+        repAnalysis: "Marcus turned this into his strongest demo moment — immediately showing CyberShield running inside a GitHub PR with zero workflow change. He used the buyer's own objection as the setup for his differentiator.",
+        repRecommendation: "Textbook move. Used the buyer's past failure to frame the demo around their #1 adoption concern. This is exactly how to sell against a previous bad experience.",
+        urgencyMessage: "You've already lost a year to a tool that didn't stick. Every month without consistent scanning is compounding the same risk that triggered the incident two weeks ago.",
+        urgencyTiming: "In the case study email — tie MedBridge's adoption success to their failed rollout."
+      },
+      {
+        title: "Cost of incident response scramble",
+        type: "direct_cost_reduction",
+        strength: "Unquantified",
+        customerQuote: "Fair point. (In response to: 'What did that four-month-old CVE cost you? Not just the incident response, but the board conversation, the compliance review, the eng hours to scramble and patch.')",
+        cfoImpact: "Incident response for a critical CVE in a healthtech company includes: engineering hours to patch, compliance review, board reporting, and potential customer notification. Typically $50K-$200K in fully loaded costs for a single incident.",
+        repCaught: "Yes — Strong",
+        repAnalysis: "Marcus asked the perfect CFO-grade question: 'What did that four-month-old CVE cost you?' and expanded it beyond just the technical fix to include board conversations and compliance review. The buyer's 'fair point' signals this landed.",
+        repRecommendation: "This was the pivotal moment. Marcus connected the price objection directly to the cost of the problem. The buyer immediately pivoted from 'that's higher than Snyk' to 'let me bring in my CTO.' Perfect execution.",
+        urgencyMessage: "The incident two weeks ago cost your team engineering hours, a board conversation, and a compliance review — for one CVE you happened to find. How many more are sitting undetected in the 40% of repos nobody's scanning?",
+        urgencyTiming: "Use in the ROI section of the Tuesday deep dive presentation."
+      }
+    ],
+    summary: {
+      overallStrength: "Strong",
+      cfoReady: "Yes",
+      cfoReadyExplanation: "This conversation surfaced five value levers with strong evidence — including quantified risk exposure, compliance pressure, and a failed prior investment. The buyer provided specific numbers (4 months, 60% adoption, 40 microservices, 150 repos) that make a compelling CFO business case.",
+      topRecommendation: "Before the Tuesday deep dive, send a one-page summary that quantifies the total risk exposure: 40% unscanned repos × 40 microservices × patient data × 4-month detection gap. Frame the $2,800/mo investment against the cost of the incident they just had. The CTO and compliance lead need to see this as a balance sheet decision, not a tooling decision."
+    }
+  },
+  2: { // DataStream — Lost
+    levers: [
+      {
+        title: "Four engineers maintaining 400 DAGs",
+        type: "scalability",
+        strength: "Quantified",
+        customerQuote: "We have 400-something DAGs and it's a nightmare. The scheduler falls over constantly, we're spending more time maintaining Airflow than building actual pipelines.",
+        cfoImpact: "Four engineers spending significant time on maintenance instead of building pipelines is a capacity problem. At $180K loaded cost per engineer, even 30% maintenance time = $216K/year in engineering capacity lost to operational overhead.",
+        repCaught: "Yes — Moderate",
+        repAnalysis: "Priya recognized the ratio ('Four people managing 400 DAGs — that's a heavy load') and asked about business impact, which was good. But she didn't quantify the maintenance time percentage until later when she used it defensively in a pricing objection — by then it felt like a sales tactic rather than genuine discovery.",
+        repRecommendation: "Quantify the maintenance burden early, before pricing comes up: 'Of your four engineers' time, what percentage goes to keeping Airflow running vs. building new pipelines?' Then: 'So you're essentially paying for 1-2 engineers who can't do their actual job.' This builds the business case before the price conversation.",
+        urgencyMessage: "Your four-person team is spending more time maintaining Airflow than building pipelines. Every month you stay on Airflow is another month where your data engineering capacity is consumed by operational overhead instead of delivering business value.",
+        urgencyTiming: "In the ROI analysis document Priya promised to send — lead with this number."
+      },
+      {
+        title: "Missed SLAs impacting trading desk",
+        type: "risk_mitigation",
+        strength: "Quantified",
+        customerQuote: "Our risk models run on the outputs of about 30 of those DAGs. When they're late, the trading desk doesn't have updated risk numbers. Last month we missed an SLA twice and my VP had to explain it to the head of trading.",
+        cfoImpact: "Missed SLAs on risk model outputs for a trading desk is a regulatory and financial exposure issue. In fintech, stale risk numbers can lead to mispriced trades, compliance violations, and executive-level accountability.",
+        repCaught: "No — Missed",
+        repAnalysis: "Priya acknowledged this was serious ('that's the kind of thing that gets executive attention fast') but immediately pivoted to a product pitch instead of quantifying the SLA impact. She never asked what a missed SLA costs, how often it happens, or what the trading desk exposure is when risk numbers are late.",
+        repRecommendation: "This was the highest-value lever on the call and it was abandoned for a feature pitch. Ask: 'When the trading desk is operating on stale risk numbers, what's the exposure? Are we talking about trades that shouldn't have been made, or positions that weren't hedged?' Then: 'What did your VP have to commit to the head of trading to make this go away?'",
+        urgencyMessage: "You missed your risk model SLA twice last month. Every time the trading desk operates on stale numbers, you're carrying unquantified exposure. Your VP already had to explain it once — how many more times before this becomes a mandate, not a request?",
+        urgencyTiming: "This should have been the anchor of the entire pricing conversation. Include prominently in the ROI doc."
+      },
+      {
+        title: "Data scientists bottlenecked on engineering",
+        type: "organizational_capabilities",
+        strength: "Unquantified",
+        customerQuote: "Our data scientists can't self-serve at all — every request goes through my team.",
+        cfoImpact: "Data scientists blocked by engineering bottlenecks means delayed model development, slower time-to-insight, and engineering hours spent on request fulfillment instead of infrastructure improvement.",
+        repCaught: "No — Missed",
+        repAnalysis: "Priya mentioned the self-serve UI as a feature benefit but never explored how many data scientists are blocked, how many requests per week go through Ryan's team, or what business decisions are delayed because of the bottleneck.",
+        repRecommendation: "Ask: 'How many data scientists are waiting on your team? And when they submit a request, how long does it take before it's live?' Then: 'So your data science team is operating at a fraction of their capacity because they're queued behind your four-person team. What would it mean if they could ship their own pipelines?'",
+        urgencyMessage: "Every week your data scientists wait in the engineering queue is a week of delayed insights. The bottleneck isn't their capability — it's the infrastructure forcing them to depend on a four-person team that's already overloaded.",
+        urgencyTiming: "In the ROI doc, quantify the data science team's lost productivity alongside engineering maintenance costs."
+      },
+      {
+        title: "Engineering time as hidden TCO",
+        type: "direct_cost_reduction",
+        strength: "Quantified",
+        customerQuote: "We're currently running Airflow on a couple of EC2 instances that cost us maybe $800 a month.",
+        cfoImpact: "The $800/month infrastructure cost masks the true cost: 4 engineers × 30%+ maintenance time × $180K loaded = $216K+/year. The real TCO is 20x the infrastructure bill.",
+        repCaught: "Yes — Moderate",
+        repAnalysis: "Priya made the TCO argument ('If each of your four engineers spends even 30% of their time on Airflow maintenance, that's more than one full headcount') but deployed it reactively as a price defense. The buyer's response — 'I get the TCO argument' — suggests he'd heard this framing before and it felt like a sales technique, not a discovery insight.",
+        repRecommendation: "The TCO math was right but the timing was wrong. This should have been surfaced during discovery, not as a response to a pricing objection. When the buyer said '$800/month,' the rep should have said: 'Let's put that number in context. You told me your team spends more time maintaining Airflow than building pipelines. What does that actually cost you in engineering hours?'",
+        urgencyMessage: "Your Airflow bill is $800/month, but your Airflow cost is $216K/year in engineering time. Every month you stay on the current setup, you're paying a hidden premium that dwarfs any platform subscription.",
+        urgencyTiming: "Lead the ROI document with this reframe — infrastructure cost vs. true engineering cost."
+      }
+    ],
+    summary: {
+      overallStrength: "Strong",
+      cfoReady: "Partially",
+      cfoReadyExplanation: "The conversation surfaced four strong value levers with quantifiable business impact — but the rep failed to quantify the two most powerful ones (SLA risk to the trading desk and data science bottleneck). The buyer handed the rep a CFO-ready business case and the rep responded with features and price justification.",
+      topRecommendation: "This deal was lost on price because the value case was never built. The buyer said 'I'm having a hard time justifying 5x the cost to my VP' — that's not a price objection, it's a business case gap. If the rep had quantified the SLA risk to the trading desk and the data science bottleneck alongside the engineering TCO, the 5x price delta would have been a fraction of the problem cost. The ROI doc Priya promised needs to lead with the trading desk exposure, not platform features."
+    }
+  },
+  3: { // Verity Capital — Open
+    levers: [
+      {
+        title: "Previous advisor underperformance",
+        type: "direct_cost_reduction",
+        strength: "Unquantified",
+        customerQuote: "I have, but honestly, I didn't feel like I was getting personalized advice. It seemed very generic, and I wasn't seeing the returns I expected.",
+        cfoImpact: "Underperforming investment returns represent direct opportunity cost. Without knowing the portfolio size or the gap between expected and actual returns, the dollar impact can't be quantified — but the buyer signaled it was significant enough to seek alternatives.",
+        repCaught: "No — Missed",
+        repAnalysis: "Andy acknowledged the concern ('Personalization is crucial') but never asked what returns Jane expected vs. what she got, or how much money is under management. He moved straight to pitching Verity's approach instead of understanding the financial gap.",
+        repRecommendation: "Ask: 'When you say you weren't seeing the returns you expected — can you give me a sense of the gap? Were you expecting 8% and getting 4%, or something else entirely? And roughly what size portfolio are we talking about?' This turns a vague complaint into a quantifiable opportunity cost.",
+        urgencyMessage: "Every month with an underperforming investment strategy is compounding lost returns. If the gap between expected and actual performance is even 2-3 percentage points, the cost of waiting to switch grows with every quarter.",
+        urgencyTiming: "At the Thursday consultation, after establishing the portfolio size and return gap."
+      }
+    ],
+    summary: {
+      overallStrength: "Weak",
+      cfoReady: "No",
+      cfoReadyExplanation: "This conversation surfaced one potential value lever (underperforming returns) but it was never quantified. The rest of the call was dominated by generic discovery and product pitching. No specific costs, risks, or capacity constraints were established.",
+      topRecommendation: "The Thursday consultation must open with quantifying questions, not a product walkthrough. Ask: 'How much do you have under management today? What returns have you been getting? What do you need to hit for retirement by [target date]?' Until the dollar gap is on the table, there's no business case — just a conversation about feelings."
+    }
+  },
+  4: { // Nexiv Solutions — Open
+    levers: [
+      {
+        title: "New hire onboarding time sink",
+        type: "organizational_capabilities",
+        strength: "Unquantified",
+        customerQuote: "It often takes too long for new team members to get up to speed.",
+        cfoImpact: "Slow onboarding means new hires aren't productive for longer, costing the organization in salary paid for ramp-up time. Without knowing team size, turnover rate, or onboarding duration, the cost remains unquantified.",
+        repCaught: "No — Missed",
+        repAnalysis: "Jamie heard the onboarding pain but immediately pivoted to 'Our solution at Nexiv is designed to be user-friendly' — a feature pitch instead of a quantifying question. The buyer's actual cost was never explored.",
+        repRecommendation: "Ask: 'When you say too long — are we talking weeks or months? And how many new people have you onboarded in the last year? What does that ramp-up time cost you in delayed project delivery?'",
+        urgencyMessage: "Every new hire who takes weeks to get productive is weeks of project capacity you're paying for but not getting. With multiple projects running simultaneously, that ramp-up time compounds across every team member.",
+        urgencyTiming: "During the Tuesday demo, after establishing team size and turnover numbers."
+      }
+    ],
+    summary: {
+      overallStrength: "Weak",
+      cfoReady: "No",
+      cfoReadyExplanation: "The conversation surfaced vague pain points (chaos, unintuitive software, lacking reporting) but none were tied to specific business costs. The buyer expressed frustration, not financial impact. No numbers, no timelines, no dollar amounts — nothing a CFO could act on.",
+      topRecommendation: "The Tuesday demo will fail if it's a feature walkthrough. Jamie needs to open with: 'You mentioned managing multiple projects feels like chaos. Let's put some numbers on that — how many projects are running right now, how many people, and when a project slips, what does that cost the business?' Without that foundation, the demo is a feature comparison and Nexiv will lose on price or inertia."
+    }
+  },
+  5: { // SmartLLM — Lost
+    levers: [],
+    summary: {
+      overallStrength: "None detected",
+      cfoReady: "No",
+      cfoReadyExplanation: "This conversation surfaced zero CFO-grade value levers. The buyer expressed general concerns about integration complexity, security, and compliance, but none were tied to specific business costs, risks, or capacity constraints. Every statement failed the CFO Test — they were feelings, not financials.",
+      topRecommendation: "The rep responded to every concern with a feature reassurance instead of a business impact question. When Dr. Chen said 'we've been struggling with integrating our data pipelines,' the response should have been: 'What is that costing you today? How many engineering hours go into integration work, and what aren't they building because of it?' Without a single quantified problem, there was nothing to build a business case on — and the buyer's final 'feels like a lot of change' confirms she had no financial reason to move forward."
+    }
+  },
+  6: { // SmartLLM — Won
+    levers: [
+      {
+        title: "Scaling bottlenecks blocking growth",
+        type: "scalability",
+        strength: "Unquantified",
+        customerQuote: "It FEELS like the current tools just don't scale... we hit bottlenecks a lot.",
+        cfoImpact: "Scaling bottlenecks in LLM infrastructure mean the team can't increase throughput without proportional cost increases. The business impact depends on what the bottlenecks are blocking — if it's customer-facing features or revenue-generating models, the cost is significant.",
+        repCaught: "No — Missed",
+        repAnalysis: "The rep heard 'bottlenecks' and 'can't afford to keep throwing money' but jumped to 'our platform automates model training, which could save costs' — a feature pitch without understanding what the bottlenecks actually cost.",
+        repRecommendation: "Ask: 'When you hit a bottleneck, what happens? Does work queue up, do you lose data, or do people sit idle? And how often is this happening — weekly, daily?' Then: 'What would it mean for your team if you could scale without hitting those walls?'",
+        urgencyMessage: "Every bottleneck your team hits is throughput you're leaving on the table. If you're hitting them regularly, the cumulative cost in delayed work and wasted compute adds up fast.",
+        urgencyTiming: "In the demo session follow-up, after establishing the frequency and impact of bottlenecks."
+      },
+      {
+        title: "Wasting money on broken tooling",
+        type: "direct_cost_reduction",
+        strength: "Unquantified",
+        customerQuote: "We can't afford to keep throwing money at something that's not working.",
+        cfoImpact: "The buyer explicitly stated they're spending money on tools that aren't delivering value — a direct cost that could be redirected. Without knowing the current spend, the exact waste can't be quantified.",
+        repCaught: "No — Missed",
+        repAnalysis: "The rep acknowledged the concern but didn't ask the obvious follow-up: how much are you spending, and what's not working about it? Instead, the conversation moved to features and pricing.",
+        repRecommendation: "Ask: 'When you say throwing money at something that's not working — what are you spending today on your current LLM infrastructure? And what specifically isn't delivering?' This turns a complaint into a dollar amount the buyer has already committed to cutting.",
+        urgencyMessage: "You're already paying for a solution that's not working. Every month you continue is another month of spend with no return. The question isn't whether you can afford to switch — it's whether you can afford another quarter of the status quo.",
+        urgencyTiming: "In the demo session, after establishing current spend on the broken tooling."
+      }
+    ],
+    summary: {
+      overallStrength: "Weak",
+      cfoReady: "No",
+      cfoReadyExplanation: "Two potential value levers were surfaced but neither was quantified. The buyer signaled clear frustration with costs and scaling, but the rep never asked for numbers. The deal progressed despite weak discovery — likely driven by the buyer's own urgency rather than a strong business case.",
+      topRecommendation: "This deal won despite poor value lever discovery, which means the business case was built by the buyer internally, not by the rep. For the demo session, the rep should open with: 'Last time you mentioned throwing money at tools that aren't working and hitting scaling bottlenecks. Before I show you anything, can we put some numbers on that? What are you spending today, and what would it look like if those bottlenecks disappeared?' A quantified business case would have shortened the cycle and possibly increased deal size."
+    }
+  }
+};
+
+async function runAnalysis() {
+  const errorEl = document.getElementById('error-message');
+  errorEl.classList.remove('visible');
+
+  // Validate
+  if (pasteMode) {
+    const transcript = document.getElementById('transcript-input').value.trim();
+    if (transcript.length < 100) {
+      errorEl.textContent = 'Transcript must be at least 100 characters. Paste a full conversation for meaningful analysis.';
+      errorEl.classList.add('visible');
+      return;
+    }
+    if (transcript.length > 50000) {
+      errorEl.textContent = 'Transcript is too long (max 50,000 characters). Try trimming to the key portion of the conversation.';
+      errorEl.classList.add('visible');
+      return;
+    }
+  } else if (!selectedSample) {
+    errorEl.textContent = 'Select a call above to analyze.';
+    errorEl.classList.add('visible');
+    return;
+  }
+
+  // Show progress
+  document.getElementById('demo-setup').style.display = 'none';
+  const progress = document.getElementById('progress');
+  progress.classList.add('active');
+  document.getElementById('results').classList.remove('active');
+
+  const bar = document.getElementById('progress-bar');
+  const status = document.getElementById('progress-status');
+  bar.style.width = '15%';
+  status.textContent = 'Applying the CFO Test to every moment in the call...';
+
+  // If sample, use demo data with simulated delay
+  if (!pasteMode && selectedSample && DEMO_RESULTS[selectedSample]) {
+    const steps = [
+      { pct: '35%', msg: 'Evaluating rep responses to each value lever...' },
+      { pct: '60%', msg: 'Generating urgency messages with customer numbers...' },
+      { pct: '85%', msg: 'Compiling scorecard and recommendations...' },
+      { pct: '100%', msg: 'Complete' }
+    ];
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < steps.length) {
+        bar.style.width = steps[i].pct;
+        status.textContent = steps[i].msg;
+        i++;
+      } else {
+        clearInterval(interval);
+        setTimeout(() => {
+          progress.classList.remove('active');
+          renderResults(DEMO_RESULTS[selectedSample]);
+        }, 400);
+      }
+    }, 700);
+    return;
+  }
+
+  // Paste mode — call the real API
+  const transcript = document.getElementById('transcript-input').value.trim();
+
+  const progressInterval = setInterval(() => {
+    const current = parseFloat(bar.style.width);
+    if (current < 85) {
+      bar.style.width = (current + Math.random() * 8) + '%';
+    }
+    if (current > 30 && current < 50) {
+      status.textContent = 'Evaluating rep responses to each value lever...';
+    } else if (current > 50 && current < 70) {
+      status.textContent = 'Generating urgency messages with customer numbers...';
+    } else if (current > 70) {
+      status.textContent = 'Compiling scorecard and recommendations...';
+    }
+  }, 800);
+
+  try {
+    const response = await fetch('https://app.letsponder.it/api/public/value-lever-demo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ transcript })
+    });
+
+    clearInterval(progressInterval);
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({ error: 'Analysis failed' }));
+      throw new Error(err.error || 'Analysis failed');
+    }
+
+    const raw = await response.json();
+
+    // API returns { analysis: "<json string>", success, model, usage }
+    let data;
+    if (raw.analysis && typeof raw.analysis === 'string') {
+      const cleaned = raw.analysis.replace(/^```(?:json)?\s*\n?/i, '').replace(/\n?```\s*$/i, '').trim();
+      data = JSON.parse(cleaned);
+    } else if (raw.levers) {
+      data = raw;
+    } else {
+      data = raw.data || raw.result || raw;
+    }
+
+    bar.style.width = '100%';
+    status.textContent = 'Complete';
+
+    setTimeout(() => {
+      progress.classList.remove('active');
+      renderResults(data);
+    }, 400);
+
+  } catch (err) {
+    clearInterval(progressInterval);
+    progress.classList.remove('active');
+    document.getElementById('demo-setup').style.display = 'block';
+    errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+    errorEl.classList.add('visible');
+  }
+}
+
+function renderResults(data) {
+  const results = document.getElementById('results');
+  const content = document.getElementById('results-content');
+  results.classList.add('active');
+
+  let html = '';
+
+  // Summary card
+  const s = data.summary;
+  const strengthClass = s.overallStrength === 'Strong' ? 'emerald' :
+    s.overallStrength === 'Moderate' ? 'amber' :
+    s.overallStrength === 'Weak' ? 'rose' : 'text-muted';
+  const cfoClass = s.cfoReady === 'Yes' ? 'emerald' :
+    s.cfoReady === 'Partially' ? 'amber' : 'rose';
+
+  html += `<div class="summary-card">
+    <div class="summary-badges">
+      <span class="summary-badge" style="background:var(--${strengthClass}-dim,var(--surface-recessed));color:var(--${strengthClass},var(--text-muted))">
+        ${esc(s.overallStrength)} Evidence
+      </span>
+      <span class="summary-badge" style="background:var(--${cfoClass}-dim,var(--surface-recessed));color:var(--${cfoClass},var(--text-muted))">
+        CFO-Ready: ${esc(s.cfoReady)}
+      </span>
+      <span class="summary-badge" style="background:var(--accent-dim);color:var(--accent)">
+        ${data.levers.length} Value Lever${data.levers.length !== 1 ? 's' : ''}
+      </span>
+    </div>
+    <div class="summary-explanation">${esc(s.cfoReadyExplanation)}</div>
+    <div class="summary-recommendation">
+      <div class="summary-recommendation-label">Top Recommendation</div>
+      <p>${esc(s.topRecommendation)}</p>
+    </div>
+  </div>`;
+
+  // Lever cards
+  data.levers.forEach(lever => {
+    const typeLabel = lever.type.replace(/_/g, ' ');
+    const isQuantified = lever.strength === 'Quantified';
+
+    let repBadgeClass, repBadgeText;
+    if (lever.repCaught.startsWith('Yes — Strong')) {
+      repBadgeClass = 'rep-badge--strong'; repBadgeText = 'Caught — Strong';
+    } else if (lever.repCaught.startsWith('Yes — Moderate') || lever.repCaught.startsWith('Yes')) {
+      repBadgeClass = 'rep-badge--moderate'; repBadgeText = 'Caught — Moderate';
+    } else {
+      repBadgeClass = 'rep-badge--missed'; repBadgeText = 'Missed';
+    }
+
+    html += `<div class="lever-card">
+      <div class="lever-header">
+        <div class="lever-title">${esc(lever.title)}</div>
+        <div class="lever-badges">
+          <span class="lever-badge lever-badge--type">${esc(typeLabel)}</span>
+          <span class="lever-badge ${isQuantified ? 'lever-badge--quantified' : 'lever-badge--unquantified'}">${esc(lever.strength)}</span>
+        </div>
+      </div>
+      <div class="lever-body">
+        <div class="lever-quote">${esc(lever.customerQuote)}</div>
+        <div class="lever-cfo-impact"><strong>CFO Impact:</strong> ${esc(lever.cfoImpact)}</div>
+
+        <div class="rep-scorecard">
+          <div class="rep-scorecard-header">
+            <span class="rep-scorecard-label">Rep Scorecard</span>
+            <span class="rep-badge ${repBadgeClass}">${repBadgeText}</span>
+          </div>
+          <div class="rep-analysis">${esc(lever.repAnalysis)}</div>
+          <div class="rep-recommendation">${esc(lever.repRecommendation)}</div>
+        </div>
+
+        <div class="urgency-section">
+          <div class="urgency-label">Urgency Message</div>
+          <div class="urgency-message">${esc(lever.urgencyMessage)}</div>
+          <div class="urgency-timing">${esc(lever.urgencyTiming)}</div>
+        </div>
+      </div>
+    </div>`;
+  });
+
+  content.innerHTML = html;
+  results.scrollIntoView({ behavior: 'smooth' });
+}
+
+function esc(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// Reset to show setup
+function resetDemo() {
+  document.getElementById('demo-setup').style.display = 'block';
+  document.getElementById('progress').classList.remove('active');
+  document.getElementById('results').classList.remove('active');
+}
+</script>
